@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>BLOG</title>
+    <!-- icon -->
+    <link rel="icon" href="img/BIO ET BIEN ÉTRE(2).png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="custom-css/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+
+  </head>
+
+
+
+  <body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
+  <!-- Container wrapper -->
+  <div class="container-md">
+    <!-- Toggle button -->
+    <button
+    class="navbar-toggler"
+    type="button"
+    data-mdb-toggle="collapse"
+    data-mdb-target="#navbarCenteredExample"
+    aria-controls="navbarCenteredExample"
+    aria-expanded="false"
+    aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+    </button>
+    <!-- Navbar brand -->
+    <a class="navbar-brand mt-0 mt-lg-0" href="homepage2.html">
+      <img
+        src="img/BIO ET BIEN ÉTRE(2).png"
+        height="60"
+        width="180"
+        alt="Logo"
+        loading="lazy"
+      />
+    </a>
+
+
+    <!-- search bar -->
+    <div class="searchBar d-none d-lg-flex justify-content-center" >
+      <input class="bg-light py-2"  id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Que cherchez-vous?" value="" />
+      <button class="" id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#666666" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+        </svg>
+      </button>
+    </div>
+
+
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center" >
+      <!-- language -->
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <!-- Icon dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle d-flex mt-2"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <!-- <i class="united kingdom flag m-0"></i> -->
+                <h5>EN</h5>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="united kingdom flag"></i>English
+                    <i class="fa fa-check text-success ms-2"></i
+                  ></a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="morocco flag"></i>Arabe</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="uk flag"></i>English</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="france flag"></i>Français</a>
+                </li>
+
+              </ul>
+            </li>
+          </ul>
+        </div>
+     
+      <!-- Icon -->
+      <a class="text-reset me-3" href="#">
+        <!-- <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-shopping-cart-interface-kiranshastry-lineal-kiranshastry.png" height="32px" width="32px"/> -->
+        <!-- <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-shopping-bag-phone-dreamstale-lineal-dreamstale.png"/>    -->
+        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-shopping-bag-wedding-love-dreamstale-lineal-dreamstale.png"/>
+        <!-- <i class="bi bi-cart2"></i> -->
+      </a>
+
+      <!-- Notifications -->
+      <div class="dropdown">
+        <a
+          class="text-reset me-3 dropdown-toggle hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false">
+          <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-bell-calendar-time-dreamstale-lineal-dreamstale-3.png"/>
+          <span class="badge rounded-pill badge-notification bg-danger">1</span>
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li>
+            <a class="dropdown-item" href="#">Some news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Another news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Avatar -->
+      <div class="dropdown">
+        <a
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-user-interface-dreamstale-lineal-dreamstale.png"
+            class="rounded-circlee"
+            height="32"
+            alt="Avatar"
+            loading="lazy"
+          />
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+            <a class="dropdown-item" href="login.html">My profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<div class="container-fluid navbar navbar-expand-lg navbar-light">
+
+  <!-- Collapsible wrapper -->
+  <div
+  class="collapse navbar-collapse justify-content-center"
+  id="navbarCenteredExample">
+  <!-- Left links -->
+  <ul class="navbar-nav mb-2 mb-lg-0 mon">
+    <li class="nav-item px-3 ">
+      <a class="nav-link" href="homepage2.html">Home</a>
+    </li>
+    <!-- Navbar dropdown -->
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link px-3"
+        href="nos-huiles.html"
+        id="navbarDropdown"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+      Nos Huiles
+      </a>
+      
+      <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+        <li>
+          <a class="dropdown-item  py-4" href="nos-huiles.html">Nos Huiles Essentielles</a>
+        </li>
+        <li>
+          <a class="dropdown-item py-4" href="nos-huiles.html">Nos Huiles Bio</a>
+        </li>
+        <li>
+          <a class="dropdown-item py-4" href="nos-huiles.html">Nos Huiles Compléments Alimentaires</a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link px-3"
+        href="nos-coffrets.html"
+        id="navbarDropdown"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+      Nos Coffrets
+      </a>
+      
+      <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+        <li>
+          <a class="dropdown-item  py-4" href="nos-coffrets.html">Coffret decouverte des huiles vegetales</a>
+        </li>
+        <li>
+          <a class="dropdown-item py-4" href="nos-coffrets.html">Coffret Bien étre avec diffuseur</a>
+        </li>
+        <li>
+          <a class="dropdown-item py-4" href="nos-coffrets.html">Coffret aromatique</a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item px-3">
+      <a class="nav-link" href="nos-fournis.html">Nos Fournisseurs</a>
+    </li>
+    <li class="nav-item px-3">
+      <a class="nav-link" href="nous.html">Qui sommes-nous?</a>
+    </li>
+    <li class="nav-item ps-3">
+      <a class="nav-link active" aria-current="page" href="blog.html">Blog</a>
+    </li>
+
+  </ul>
+  <!-- Left links -->
+</div>
+<!-- Collapsible wrapper -->
+</div>
+
+
+
+
+<div class="container ban mt-5">
+    <div class="d-flex justify-content-center my-5">
+        <hr style="width:25%;text-align:left;margin-left:0;height: 2px;">        
+        <h1 class="mx-md-4" style="color: #9e121b;" > NOTRE BLOG</h1>
+        <hr style="width:25%;text-align:right;margin-right:0;height: 2px;">
+    </div>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light justify-content-center d-flex">
+        <ul class=" navbar-nav mb-2 mb-lg-0" >
+            <li class="nav-item">
+                <a class="nav-link" href="#">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Projects</a>
+              </li>
+        </ul>
+    </nav> -->
+    <!-- <hr> -->
+    <ul class="blog row d-flex mx-xl-5 list-unstyled d-xs-none row-cols-2 ">
+        <li class="col col-sm-2 text-md-center"><h5><a href="" class="text-reset fw-bold"><ins>Ingredients</ins></a></h5></li>
+        <li class="col col-sm-2 text-md-center"><h5><a href="" class="text-reset fw-bold"><ins>Santé</ins>  </a></h5></li>
+        <li class="col col-sm-2 text-md-center"><h5><a href="" class="text-reset fw-bold"><ins>Aromatherapy</ins> </a></h5></li>
+        <li class="col col-sm-2 text-md-center"><h5><a href="" class="text-reset fw-bold"><ins>Conseils</ins> </a></h5></li>
+        <li class="col col-sm-2 text-md-center"><h5><a href="" class="text-reset fw-bold"><ins>Recettes</ins> </a></h5></li>
+        <li class="col col-sm-2 text-md-center"><h5><a href="" class="text-reset fw-bold"><ins>Cosmétique</ins> </a></h5></li>
+    </ul>
+    <!-- <hr> -->
+    
+
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-4 mt-5" >
+        <div class="col">
+          <div class="card">
+            <img src="img/minifich8.jpg" class="card-img-top"/>
+            <div class="card-body" >
+              <h5 class="card-title fs-4">New Spring Limited Edition Blends & Sets</h5>
+              <p class="card-text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, similique? Laudantium illum eveniet ex culpa cumque ad atque distinctio aperiam commodi repudiandae? Fugiat,
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/minifich10.jpg" class="card-img-top"/>
+            <div class="card-body">
+              <h5 class="card-title fs-4">Top Essential Oil Uses & Benefits</h5>
+              <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat exercitationem incidunt a, alias laborum animi corrupti quis temporibus, quia inventore est aspernatur suscipit rem quae?
+                  Lorem 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/minifich7.jpg" class="card-img-top" style="max-height: 17.3rem;" />
+            <div class="card-body">
+              <h5 class="card-title fs-4">Which Essential Oils Improve Blood Flow?</h5>
+              <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos iste amet minus, assumenda, quam nobis ipsa quidem eveniet illo soluta? Saepe veritatis 
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
+        <div class="col">
+          <div class="card">
+            <img src="img/minifich8.jpg" class="card-img-top"/>
+            <div class="card-body">
+              <h5 class="card-title fs-4">New Spring Limited Edition Blends & Sets</h5>
+              <p class="card-text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, similique? Laudantium illum eveniet ex culpa cumque ad atque distinctio aperiam commodi repudiandae? Fugiat,
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/minifich10.jpg" class="card-img-top"/>
+            <div class="card-body">
+              <h5 class="card-title fs-4">Top Essential Oil Uses & Benefits</h5>
+              <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat exercitationem incidunt a, alias laborum animi corrupti quis temporibus, quia inventore est aspernatur suscipit rem quae?
+                  Lorem 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/minifich7.jpg" class="card-img-top" style="max-height: 17.3rem;"/>
+            <div class="card-body">
+              <h5 class="card-title fs-4">Which Essential Oils Improve Blood Flow?</h5>
+              <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos iste amet minus, assumenda, quam nobis ipsa quidem eveniet illo soluta? Saepe veritatis 
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
+        <div class="col">
+          <div class="card">
+            <img src="img/minifich8.jpg" class="card-img-top"/>
+            <div class="card-body">
+              <h5 class="card-title fs-4">New Spring Limited Edition Blends & Sets</h5>
+              <p class="card-text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, similique? Laudantium illum eveniet ex culpa cumque ad atque distinctio aperiam commodi repudiandae? Fugiat,
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/minifich10.jpg" class="card-img-top"/>
+            <div class="card-body">
+              <h5 class="card-title fs-4">Top Essential Oil Uses & Benefits</h5>
+              <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat exercitationem incidunt a, alias laborum animi corrupti quis temporibus, quia inventore est aspernatur suscipit rem quae?
+                  Lorem 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/minifich7.jpg" class="card-img-top" style="max-height: 17.3rem;"/>
+            <div class="card-body">
+              <h5 class="card-title fs-4">Which Essential Oils Improve Blood Flow?</h5>
+              <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos iste amet minus, assumenda, quam nobis ipsa quidem eveniet illo soluta? Saepe veritatis 
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+     
+
+    <nav aria-label="Page navigation example ">
+        <ul class="pagination justify-content-center my-5 ">
+          <li class="page-item disabled">
+            <a class="page-link fs-5">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link fs-5" href="#">1</a></li>
+          <li class="page-item"><a class="page-link fs-5" href="#">2</a></li>
+          <li class="page-item"><a class="page-link fs-5" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link fs-5" href="#">Next</a>
+          </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section
+    class="container d-flex justify-content-center justify-content-lg-between p-4 border-bottom ">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span class="fs-4 ban">Rejoignez-nous sur les réseaux sociaux :</span>
+    </div>
+    <!-- Left -->
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Section: Links  -->
+  <section class="ban">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3 row-cols-2">
+        <!-- Grid column -->
+        <div class="col-xs-6 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Bio et Bien étre
+          </h6>
+          <p>
+            “Bio et Bien étre” est une entreprise de vente de huiles essentielles naturelles en ligne, actuellement en cours de création. L'enregistrement des statuts pour la création d’une StartUp est prévu pour début Juillet.                    
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-xs-6 col-lg-2 col-xl-2 mx-auto mb-4 lh-sm">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Produits
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Nos Huiles</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Nos Huiles Essentielles</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Nos Huiles Compléments alimentaires</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Nos Coffrets</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-xs-6 col-lg-2 col-xl-2 mx-auto mb-4 lh-sm">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Liens utiles
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Qui Sommes-nous?</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Mentions Légales</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">FAQ</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Presse</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Blog</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-xs-6 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Contact
+          </h6>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            contact-bio@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2022 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">bioetbienetre.ma</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->           
+
+
+    
+
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>

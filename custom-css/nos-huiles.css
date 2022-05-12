@@ -1,0 +1,28 @@
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+  color: black;
+  content: '▾';
+  padding-top: .5rem;
+  pointer-events: none;
+  position: absolute;
+  right: 15px;
+}
+  
+.select {
+  -moz-appearance: none;
+  /* -webkit-appearance: none; */
+  background: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid rgb(221, 214, 214);
+}
+
+.mon{
+    font-family: 'Montserrat', sans-serif;
+}
+
