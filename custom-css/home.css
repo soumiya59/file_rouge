@@ -227,3 +227,24 @@
     color: var(--red);
 
   }
+
+  [data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.1s;
+    visibility: visible;
+  }
+  [data-title]:after {
+      content: attr(data-title);
+      background-color: rgb(59, 58, 58);
+      color: rgb(212, 206, 206);
+      position: absolute;
+      border-radius: 10px;
+      padding: 6px 22px;
+      bottom: -3.3em;
+      left: -1.7rem;
+      z-index: 99999;
+      visibility: hidden;
+  }
+  [data-title] {
+      position: relative;
+  }
