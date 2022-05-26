@@ -230,24 +230,18 @@
  <div class="container ban mt-5 mb-6 " style="height: 700px;">
      <h1 class="text-center mon">Connexion</h1>
      <hr>
-     <!-- <?php
-      if(isset($_POST['checked'])){
-       setcookie('email','', time()-86400);
-       setcookie('email', $_POST['email'], time()+ 86400*30);
-      }
-     ?> -->
      
-     <form  class="container mt-5 w-50 " style="max-width: 50vh;">
+     <form action="login.php" method="POST" class="container mt-5 w-50 " style="max-width: 50vh;">
         <!-- Email input -->
         <div class="form-outline mb-4">
-          <input type="email" id="form2Example1" class="form-control" />
-          <label class="form-label" for="form2Example1">Email address</label>
+          <input type="email" name="email" class="form-control" />
+          <label class="form-label">Email address</label>
         </div>
       
         <!-- Password input -->
         <div class="form-outline mb-4">
-          <input type="password" id="form2Example2" class="form-control" />
-          <label class="form-label" for="form2Example2">Password</label>
+          <input type="password" name="password" class="form-control" />
+          <label class="form-label" >Password</label>
         </div>
       
         <!-- 2 column grid layout for inline styling -->
@@ -255,7 +249,7 @@
           <div class="col d-flex justify-content-center">
             <!-- Checkbox -->
             <div class="form-check ">
-                <input class="form-check-input" type="checkbox" />
+                <input class="form-check-input" type="checkbox" name="checked"/>
                 <label class="form-check-label" > Remember me </label>
             </div>
           </div>
@@ -267,7 +261,7 @@
         </div>
       
         <!-- Submit button -->
-        <button type="submit" class="btn btn-plus btn-block mb-4 fs-6">Sign in</button>
+        <button type="submit" name="submit" class="btn btn-plus btn-block mb-4 fs-6">Sign in</button>
 
       
         <!-- Register buttons -->

@@ -227,46 +227,43 @@
 
 
 
-
-
-
 <div class="text-light">.</div>
 <div class="container ban mt-5 mb-6 " style="height: 700px;">
     <h1 class="text-center mon">Créer un compte</h1>
     <hr>
-    <form class="container mt-5 w-50 " style="max-width: 50vh;">
-        <!-- 2 column grid layout with text inputs for the first and last names -->
+    <form action="register.php" method="post" class="container mt-5 w-50 " style="max-width: 50vh;">
+      <!-- 2 column grid layout with text inputs for the first and last names -->
         <div class="row mb-4 " >
           <div class="col">
             <div class="form-outline">
-              <input type="text" id="form3Example1" class="form-control" />
-              <label class="form-label" for="form3Example1">First name</label>
+              <input type="text" name="first_name" class="form-control" />
+              <label class="form-label" >First name</label>
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input type="text" id="form3Example2" class="form-control" />
-              <label class="form-label" for="form3Example2">Last name</label>
+              <input type="text" name="last_name" class="form-control" />
+              <label class="form-label" >Last name</label>
             </div>
           </div>
         </div>
       
         <!-- Email input -->
         <div class="form-outline mb-4">
-          <input type="email" id="form3Example3" class="form-control" />
-          <label class="form-label" for="form3Example3">Email address</label>
+          <input type="email" class="form-control" />
+          <label class="form-label" >Email address</label>
         </div>
       
         <!-- Password input -->
         <div class="form-outline mb-4">
-          <input type="password" id="form3Example4" class="form-control" />
-          <label class="form-label" for="form3Example4">Password</label>
+          <input type="password" class="form-control" />
+          <label class="form-label" >Password</label>
         </div>
       
         <!-- Checkbox -->
         <div class="form-check d-flex justify-content-center mb-4">
-          <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" />
-          <label class="form-check-label" for="form2Example33">
+          <input class="form-check-input me-2" type="checkbox" />
+          <label class="form-check-label" >
             Subscribe to our newsletter
           </label>
         </div>
