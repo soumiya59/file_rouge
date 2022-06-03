@@ -149,14 +149,12 @@
 </nav>
 <!-- Navbar -->
 
-<div class="container-fluid navbar navbar-expand-lg navbar-light">
-
+<div class="container-fluid navbar navbar-expand-lg navbar-light p-0">
   <!-- Collapsible wrapper -->
   <div
-  class="collapse navbar-collapse justify-content-center"
+  class="collapse navbar-collapse justify-content-center "
   id="navbarCenteredExample">
-  <!-- Left links -->
-  <ul class="navbar-nav mb-2 mb-lg-0 mon">
+  <ul class="navbar-nav ps-2 ps-md-5 mb-lg-0 mon py-md-2">
     <li class="nav-item px-3 ">
       <a class="nav-link active " aria-current="page" href="homepage2.html">Home</a>
     </li>
@@ -172,15 +170,14 @@
       >
       Nos Huiles
       </a>
-      
       <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-        <li>
+        <li class="d-none d-lg-block">
           <a class="dropdown-item  py-3" href="nos-huiles.html">Nos Huiles Essentielles</a>
         </li>
-        <li>
+        <li class="d-none d-lg-block">
           <a class="dropdown-item py-3" href="nos-huiles.html">Nos Huiles Bio</a>
         </li>
-        <li>
+        <li class="d-none d-lg-block">
           <a class="dropdown-item py-3" href="nos-huiles.html">Nos Huiles Compléments Alimentaires</a>
         </li>
       </ul>
@@ -196,15 +193,14 @@
       >
       Nos Coffrets
       </a>
-      
       <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-        <li>
+        <li class="d-none d-lg-block">
           <a class="dropdown-item  py-3" href="nos-coffrets.html">Coffret decouverte des huiles vegetales</a>
         </li>
-        <li>
+        <li class="d-none d-lg-block">
           <a class="dropdown-item py-3" href="nos-coffrets.html">Coffret Bien étre avec diffuseur</a>
         </li>
-        <li>
+        <li class="d-none d-lg-block">
           <a class="dropdown-item py-3" href="nos-coffrets.html">Coffret aromatique</a>
         </li>
       </ul>
@@ -218,9 +214,7 @@
     <li class="nav-item ps-3">
       <a class="nav-link" href="blog.html">Blog</a>
     </li>
-
   </ul>
-  <!-- Left links -->
 </div>
 <!-- Collapsible wrapper -->
 </div>
@@ -236,13 +230,13 @@
         <div class="row mb-4 " >
           <div class="col">
             <div class="form-outline">
-              <input type="text" name="first_name" class="form-control" />
+              <input type="text" name="first_name" class="form-control" id="nom" required/>
               <label class="form-label" >First name</label>
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input type="text" name="last_name" class="form-control" />
+              <input type="text" name="last_name" class="form-control" id="prenom" required/>
               <label class="form-label" >Last name</label>
             </div>
           </div>
@@ -250,13 +244,13 @@
       
         <!-- Email input -->
         <div class="form-outline mb-4">
-          <input type="email" class="form-control" />
+          <input type="email" class="form-control" id="email" required/>
           <label class="form-label" >Email address</label>
         </div>
       
         <!-- Password input -->
         <div class="form-outline mb-4">
-          <input type="password" class="form-control" />
+          <input type="password" class="form-control" id="password" required />
           <label class="form-label" >Password</label>
         </div>
       
@@ -420,12 +414,9 @@
 <!-- Footer -->           
 
 
-    
-
-
-    <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
+    <script src="custom-js/client.js"></script>
   </body>
 </html>
