@@ -225,18 +225,20 @@
 <div class="container ban mt-5 mb-6 " style="height: 700px;">
     <h1 class="text-center mon">Créer un compte</h1>
     <hr>
-    <form action="php/register.php" method="post" class="container mt-5 w-50 " style="max-width: 50vh;">
-      <!-- 2 column grid layout with text inputs for the first and last names -->
+    <form method="post" name="frm_client" action="php/register.php" class="container mt-5 w-50 " style="max-width: 50vh;" enctype="multipart/form-data" >
+      <div id="client" style="color: red;"></div>
+
         <div class="row mb-4 " >
           <div class="col">
             <div class="form-outline">
-              <input type="text" name="first_name" class="form-control" id="nom" required/>
+              <input type="text" name="txt_prenom" class="form-control" required/>
               <label class="form-label" >First name</label>
             </div>
           </div>
+          
           <div class="col">
             <div class="form-outline">
-              <input type="text" name="last_name" class="form-control" id="prenom" required/>
+              <input type="text" name="txt_nom" class="form-control" required/>
               <label class="form-label" >Last name</label>
             </div>
           </div>
@@ -244,13 +246,13 @@
       
         <!-- Email input -->
         <div class="form-outline mb-4">
-          <input type="email" class="form-control" id="email" required/>
+          <input type="email" name="txt_email" class="form-control" required/>
           <label class="form-label" >Email address</label>
         </div>
       
         <!-- Password input -->
         <div class="form-outline mb-4">
-          <input type="password" class="form-control" id="password" required />
+          <input type="password" name="txt_password" class="form-control"  required />
           <label class="form-label" >Password</label>
         </div>
       
@@ -263,7 +265,7 @@
         </div>
       
         <!-- Submit button -->
-        <button type="submit" class="btn btn-block mb-4 btn-plus fs-6" >Sign up</button>
+        <button type="button" id="myBtn" onclick="novclient(frm_client)" class="btn btn-block mb-4 btn-plus fs-6" >Sign up</button>
       
         <!-- Register buttons -->
         <div class="text-center">
