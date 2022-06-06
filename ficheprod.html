@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="css/mdb.min.css" />
     <link rel="stylesheet" href="custom-css/home.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
   </head>
 
@@ -243,7 +246,7 @@
        </div>
        <div class="row">
           <div class="col-md-12">
-              <p class="fw-light">100% Pure Therapeutic Oil</p>
+              <p class="fw-light">100% Huile Thérapeutique Pure</p>
           </div>
        </div><!-- end row -->
 
@@ -262,15 +265,15 @@
           <p class="fw-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique illum consectetur numquam illo nemo! Minus beatae facilis sequi libero unde debitis in voluptatibus ta! Libero facere voluptatibus accusamus praesentium, magni beatae sunt </p>
       </div>
          
-         <div class=" add-to-cart">
+         <div class="add-to-cart">
              <div class="product-qty d-flex mt-4 justify-content-sm-center justify-content-md-start">
-              <span class="btn btn-default btn-lg btn-qty">
-               <span class="glyphicon glyphicon-plus" aria-hidden="true">+</span>
+              <span class="btn btn-default btn-lg btn-qty" onclick="incrementValue()">
+               <span class="glyphicon glyphicon-plus" aria-hidden="true" >+</span>
               </span>
             
-              <input class="btn btn-default btn-lg btn-qty" value="1" />
+              <input class="btn btn-default btn-lg btn-qty" value="1" id="number"/>
             
-              <span class="btn btn-default btn-lg btn-qty">
+              <span class="btn btn-default btn-lg btn-qty" onclick="decreaseValue()">
                <span class="glyphicon glyphicon-minus" aria-hidden="true">-</span>
               </span>
              </div>
@@ -317,7 +320,6 @@
               </div>
            </div>
          </div> -->
-
    </div>
   </div><!-- end row -->
 
@@ -327,21 +329,23 @@
  <div class="col  py-4 px-3 me-3" style="border: 1px solid #9e121b;">
    <h5 class="red mon" >DETAILS</h5>
    <ul class="pt-2">
-     <li>100% pure & organic </li>
-     <li>strengthens & repairs hair, nails, lashes, brows & beard</li>
-     <li>dermatologically tested</li>
-     <li>ECOCERT certified </li>
-     <li>not tested on animals </li>
-     <li>vegan </li>
+     <li>100% pur & bio</li>
+     <li>renforce et répare les cheveux, les ongles, les cils, les sourcils et la barbe</li>
+     <li>testé dermatologiquement</li>
+     <li>non testé sur les animaux </li>
+     <li>végétalienne</li>
    </ul>
+   <p class="ms-3"><span class="fw-bold">Région d’origine : </span><span>Maroc</span></p>
+   <p class="ms-3"><span class="fw-bold">Tags : </span><span> Tonifiant , Bain , Cheveux , Visage</span></p>
+
   </div>
  <div class="col py-4 px-3" style="border: 1px solid #9e121b;">
    <h5 class="red mon">DESCRIPTION</h5>
-   <p>Castor oil is a traditional natural household remedy used to strengthen hair and nails. This oil is of 100% pure quality and stems from controlled organic farming. </p>
-   <b>Versatile in use: </b>
+   <p>L'huile de rose est un remède domestique naturel traditionnel utilisé pour renforcer les cheveux et les ongles. Cette huile est de qualité 100% pure et issue de l'agriculture biologique contrôlée.</p>
+   <b>Utilisation polyvalente :</b>
    <ol>
-     <li><b>Hair mask</b>: Apply castor oil to the hair at night. Braid the hair and wrap a towel on your pillow securely before retiring for bed. </li>
-     <li><b>Nail & cuticle care</b>: Apply to a small mount of oil to the nails and cuticles before retiring for bed. </li>
+     <li><b>mask de cheveux</b>:Appliquer sur les cheveux. Tressez les cheveux et enroulez une serviette sur votre oreiller avant de vous coucher. </li>
+     <li><b>Soin des ongles et des cuticules</b>: Appliquez une petite quantité d'huile sur les ongles et les cuticules avant de vous coucher. </li>
    </ol>
   </div>
 </div>
@@ -379,7 +383,7 @@
                   <div class="card col-xs-6 col-md-3" onclick="location.href='ficheprod.html';" style="cursor: pointer;">
                     <img class="card-img-top" src="img/alcoolat-rose.png" alt="Card image cap">
                     <div class="card-body text-center lh-1">
-                      <p class="oilname fw-bold fs-5">Huile essentielle de Rose</p>
+                      <p class="oilname fw-bold fs-5">Huile essentielle de  Rosee</p>
                       <p class="prix">32DH</p>
                       <div class="rating d-flex justify-content-center">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i> <p class="mx-1">(11)</p> 
@@ -412,11 +416,23 @@
                     <i class="fas fa-star"> </i><i class="fas fa-star mx-3"></i><i class="fas fa-star"></i><i class="fas fa-star mx-3"></i><i class="fas fa-star-half"></i> <p class="mx-2">(11)</p> 
                   </div>
                 </div>
-                <a href="#" class="btn btn-style fw-bold mon rounded-pill col-sm-4 col-lg-3 h-25">Écrire un review</a>  
+                <a id="insert_review" class="btn btn-style fw-bold mon rounded-pill col-sm-4 col-lg-3 h-25">Écrire un commentaire</a>  
               </div>
             </div>
 
-            <div class="container">
+            <div class="container py-3 fs-5 mon d-none" id="submit_msg">
+              <hr><p> Merci d'avoir envoyé un commentaire !</p>
+            </div>
+
+            <form action="php/produit/add_data.php" method="POST" class="container w-75 my-2 " id="review_section" style="max-width:60% ;">
+              <label>Nom</label><br><input name="nom_reviewer" type="text" class="w-100 mb-3 ps-2" required><br>
+              <label>Email</label><br><input name="email_reviewer" type="email" class="w-100 mb-3 ps-2" required><br>
+              <label>Titre du commentaire</label><br><input name="titre_comment" type="text" class="w-100 mb-3 ps-2" required><br>
+              <label>Le commentaire</label><br> <textarea name="txt_comment" cols="50" rows="6" class="w-100 ps-2" required></textarea><br>
+              <button type="submit" class="btn btn-style fw-bold mon rounded-pill col-sm-4 col-lg-3 h-25 mt-3" onclick="submit_msg()">Poster le commentaire</button>  
+            </form>
+
+            <div class="container mt-2">
               <div class="d-flex">
                 <div class="mb-3 me-4"  style="width: 50%;">
                   <hr>
@@ -462,6 +478,7 @@
                 </div>
               </div>              
             </div>
+
             <nav aria-label="...">
               <ul class="justify-content-center mt-2 pagination pagination-circle">
                 <li class="page-item">
@@ -469,8 +486,8 @@
                     <span aria-hidden="true">&laquo;</span>
                   </a>
                 </li>
-                <li class="page-item " aria-current="page"><a class="page-link" href="#">1 <span class="visually-hidden">(current)</span></a></li>
-                <li class="page-item" ><a class="page-link" href="#">2 </a></li>
+                <li class="page-item" aria-current="page"><a class="page-link" href="#">1 <span class="visually-hidden">(current)</span></a></li>
+                <li class="page-item"><a class="page-link" href="#">2 </a></li>
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item">
                   <a class="page-link" href="#" aria-label="Next">
@@ -480,12 +497,6 @@
               </ul>
             </nav>
             <!-- <hr class="container mt-5"> -->
-
-
-
-
-
-
 
 
 
@@ -617,12 +628,10 @@
 <!-- Footer -->           
 
 
-    
 
 
-    <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
-    <script type="text/javascript"></script>
+    <script type="text/javascript" src="custom-js/produit.js"></script>
   </body>
 </html>
