@@ -2,9 +2,15 @@
 
 <?php
 // Set vars to empty values
-$user_email = $user_password = '';
+$user_first_name = $user_last_name = $user_email = $user_password = '';
 
   // Validate input
+  if (!empty($_POST['user_first_name'])) {
+    $user_first_name = filter_input(INPUT_POST,'user_first_name',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  }
+  if (!empty($_POST['user_last_name'])) {
+    $user_last_name = filter_input(INPUT_POST,'user_last_name',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  }
   if (!empty($_POST['user_email'])) {
     $user_email = filter_input(INPUT_POST, 'user_email', FILTER_SANITIZE_EMAIL);
   }
@@ -13,10 +19,10 @@ $user_email = $user_password = '';
   }
   
   // add to database
-   $sql = "INSERT INTO users (user_email,user_password) VALUES ('$user_email', '$user_password')";
+   $sql = "INSERT INTO users (user_first_name,user_last_name,user_email,user_password) VALUES ('$user_first_name','$user_last_name','$user_email', '$user_password')";
    if (mysqli_query($conn, $sql)) {
      // success
-     header('Location: users.php');
+     header('Location: ../../homepage2.html');
    } else {
      // error
      echo 'Error: ' . mysqli_error($conn);

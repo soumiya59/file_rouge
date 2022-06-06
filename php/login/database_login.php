@@ -2,7 +2,7 @@
 define('DB_HOST','localhost');
 define('DB_USER','newuser');
 define('DB_PASSWORD','password');
-define('DB_NAME','login_form');
+define('DB_NAME','Login');
 
 // create connection
 $conn = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);

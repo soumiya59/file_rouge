@@ -22,7 +22,8 @@ $nom_reviewer = $email_reviewer = $titre_comment = $txt_comment = '';
    $sql = "INSERT INTO Reviews (nom_reviewer,email_reviewer,titre_comment,txt_comment) VALUES ('$nom_reviewer', '$email_reviewer', '$titre_comment', '$txt_comment')";
    if (mysqli_query($conn, $sql)) {
      // success
-     header('Location: Reviews.php');
+     header('Location: ../../ficheprod.html');
+    //  header('Location: Reviews.php');
    } else {
      // error
      echo 'Error: ' . mysqli_error($conn);
