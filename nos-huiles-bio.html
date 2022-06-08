@@ -1,0 +1,301 @@
+<html>
+   <head>
+        <title>Nos Huiles Bio</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <link rel="icon" href="img/icon.jpg" type="image/x-icon" />
+
+        <script> 
+        $(function(){
+               $("#header").load("./include/Header.html"); 
+               $.get('./include/Header.html', function() {
+                    $('.huiles').css('fontWeight','bold');
+               });
+               $("#footer").load("./include/Footer.html");
+        });
+        </script> 
+   </head>
+   
+   <body>
+        <div id="header"></div>
+
+        <div class="container text-center py-4 pt-5 ban " style="color: #9e121b;">
+          <h1 class="titre" >Huiles Bio</h1>
+        </div> <hr>
+         <div class="container">
+            <div class="row d-flex">
+                <div class="filter-condition col-xs-12 col-md-8 d-flex select-dropdown">
+                    <span class="py-2"><small>Filtrer</small></span>
+                    <form>
+                        <div class=" w-100 ms-2 px-2">
+                          <select class="select px-2 py-2">
+                            <option value="value1">Huiles cosmétiques</option>
+                            <option value="value2">Huiles vegetable bio</option>
+                            <option value="value3">Huiles complements alimentaires</option>
+                            <option value="value4">Prix Croissant</option>
+                            <option value="value5">Prix Décroissant</option>
+                            <option value="value6">Nos Sélections</option>
+                          </select>
+                        </div>
+                    </form>
+                </div>
+                <p class="col-md-4 d-none d-md-block text-end">53 Produits</p>
+            </div>
+         </div> 
+         <hr>
+        
+         <div class="container ban mt-5 " >
+            <div class="cards row row-cols-2 d-flex justify-content-center ">
+              <div class="card col-xs-6 col-md-3 " onclick="location.href='ficheprod.html';" style="cursor: pointer;">
+                <img class="card-img-top" src="img/cypres.png" alt="image produit">
+                <div class="card-body text-center lh-1">
+                  <p class="oilname fw-bold fs-5">Huile essentielle d'Amande</p>
+                  <p class="prix">20DH</p>
+                  <div class="rating d-flex justify-content-center">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <p class="mx-1">(12)</p> 
+                  </div>
+                  <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                </div>
+              </div>
+              <div class="card col-xs-6 col-md-3 " onclick="location.href='ficheprod.html';" style="cursor: pointer;">
+                <img class="card-img-top" src="img/tubereuse.png" alt="image produit">
+                <div class="card-body text-center lh-1">
+                  <p class="oilname fw-bold fs-5">Huile essentielle d'Argane</p>
+                  <p class="prix">50DH <del>67DH</del></p>
+                  <div class="rating d-flex justify-content-center">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <p class="mx-1">(21)</p> 
+                  </div>
+                  <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                </div>
+              </div>
+              <div class="card col-xs-6 col-md-3" onclick="location.href='ficheprod.html';" style="cursor: pointer;">
+                <img class="card-img-top" src="img/alcoolat-rose.png" alt="image produit">
+                <div class="card-body text-center lh-1 ">
+                  <p class="oilname fw-bold fs-5">Huile essentielle de Rose</p>
+                  <p class="prix">32DH</p>
+                  <div class="rating d-flex justify-content-center">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i> <p class="mx-1">(11)</p> 
+                  </div>
+                  <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                </div>
+              </div>
+              <div class="card col-xs-6 col-md-3 " onclick="location.href='ficheprod.html';" style="cursor: pointer;">
+                <img class="card-img-top" src="img/oud.png" alt="image produit">
+                <div class="card-body text-center lh-1">
+                  <p class="oilname fw-bold fs-5">Huile essentielle de Jojoba</p>
+                  <p class="prix">44DH</p>
+                  <div class="rating d-flex justify-content-center">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <p class="mx-1">(34)</p> 
+                  </div>
+                  <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cards row row-cols-2 d-flex justify-content-center">
+                <div class="card col-xs-6 col-md-3 " >
+                  <img class="card-img-top" src="img/cypres.png" alt="image produit">
+                  <div class="card-body text-center lh-1">
+                    <p class="oilname fw-bold fs-5">Huile essentielle d'Amande</p>
+                    <p class="prix">20DH</p>
+                    <div class="rating d-flex justify-content-center">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <p class="mx-1">(12)</p> 
+                    </div>
+                    <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                  </div>
+                </div>
+                <div class="card col-xs-6 col-md-3">
+                  <img class="card-img-top" src="img/tubereuse.png" alt="image produit">
+                  <div class="card-body text-center lh-1">
+                    <p class="oilname fw-bold fs-5">Huile essentielle d'Argane</p>
+                    <p class="prix">50DH <del>67DH</del></p>
+                    <div class="rating d-flex justify-content-center">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <p class="mx-1">(21)</p> 
+                    </div>
+                    <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                  </div>
+                </div>
+                <div class="card col-xs-6 col-md-3">
+                  <img class="card-img-top" src="img/alcoolat-rose.png" alt="image produit">
+                  <div class="card-body text-center lh-1">
+                    <p class="oilname fw-bold fs-5">Huile essentielle de Rose</p>
+                    <p class="prix">32DH</p>
+                    <div class="rating d-flex justify-content-center">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i> <p class="mx-1">(11)</p> 
+                    </div>
+                    <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                  </div>
+                </div>
+                <div class="card col-xs-6 col-md-3">
+                  <img class="card-img-top" src="img/oud.png" alt="image produit">
+                  <div class="card-body text-center lh-1">
+                    <p class="oilname fw-bold fs-5">Huile essentielle de Jojoba</p>
+                    <p class="prix">44DH</p>
+                    <div class="rating d-flex justify-content-center">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <p class="mx-1">(34)</p> 
+                    </div>
+                    <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                  </div>
+                </div>
+              </div>
+              <div class="cards row row-cols-2 d-flex justify-content-center">
+                <div class="card col-xs-6 col-md-3 " >
+                  <img class="card-img-top" src="img/cypres.png" alt="image produit">
+                  <div class="card-body text-center lh-1">
+                    <p class="oilname fw-bold fs-5">Huile essentielle d'Amande</p>
+                    <p class="prix">20DH</p>
+                    <div class="rating d-flex justify-content-center">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <p class="mx-1">(12)</p> 
+                    </div>
+                    <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                  </div>
+                </div>
+                <div class="card col-xs-6 col-md-3">
+                  <img class="card-img-top" src="img/tubereuse.png" alt="image produit">
+                  <div class="card-body text-center lh-1">
+                    <p class="oilname fw-bold fs-5">Huile essentielle d'Argane</p>
+                    <p class="prix">50DH <del>67DH</del></p>
+                    <div class="rating d-flex justify-content-center">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <p class="mx-1">(21)</p> 
+                    </div>
+                    <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                  </div>
+                </div>
+                <div class="card col-xs-6 col-md-3">
+                  <img class="card-img-top" src="img/alcoolat-rose.png" alt="image produit">
+                  <div class="card-body text-center lh-1">
+                    <p class="oilname fw-bold fs-5">Huile essentielle de Rose</p>
+                    <p class="prix">32DH</p>
+                    <div class="rating d-flex justify-content-center">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i> <p class="mx-1">(11)</p> 
+                    </div>
+                    <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                  </div>
+                </div>
+                <div class="card col-xs-6 col-md-3">
+                  <img class="card-img-top" src="img/oud.png" alt="image produit">
+                  <div class="card-body text-center lh-1">
+                    <p class="oilname fw-bold fs-5">Huile essentielle de Jojoba</p>
+                    <p class="prix">44DH</p>
+                    <div class="rating d-flex justify-content-center">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <p class="mx-1">(34)</p> 
+                    </div>
+                    <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                  </div>
+                </div>
+              </div>
+              <div class="cards row row-cols-2 d-flex justify-content-center">
+                <div class="card col-xs-6 col-md-3 " >
+                  <img class="card-img-top" src="img/cypres.png" alt="image produit">
+                  <div class="card-body text-center lh-1">
+                    <p class="oilname fw-bold fs-5">Huile essentielle d'Amande</p>
+                    <p class="prix">20DH</p>
+                    <div class="rating d-flex justify-content-center">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <p class="mx-1">(12)</p> 
+                    </div>
+                    <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                  </div>
+                </div>
+                <div class="card col-xs-6 col-md-3">
+                  <img class="card-img-top" src="img/tubereuse.png" alt="image produit">
+                  <div class="card-body text-center lh-1">
+                    <p class="oilname fw-bold fs-5">Huile essentielle d'Argane</p>
+                    <p class="prix">50DH <del>67DH</del></p>
+                    <div class="rating d-flex justify-content-center">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <p class="mx-1">(21)</p> 
+                    </div>
+                    <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                  </div>
+                </div>
+                <div class="card col-xs-6 col-md-3">
+                  <img class="card-img-top" src="img/alcoolat-rose.png" alt="image produit">
+                  <div class="card-body text-center lh-1">
+                    <p class="oilname fw-bold fs-5">Huile essentielle de Rose</p>
+                    <p class="prix">32DH</p>
+                    <div class="rating d-flex justify-content-center">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i> <p class="mx-1">(11)</p> 
+                    </div>
+                    <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                  </div>
+                </div>
+                <div class="card col-xs-6 col-md-3">
+                  <img class="card-img-top" src="img/oud.png" alt="image produit">
+                  <div class="card-body text-center lh-1">
+                    <p class="oilname fw-bold fs-5">Huile essentielle de Jojoba</p>
+                    <p class="prix">44DH</p>
+                    <div class="rating d-flex justify-content-center">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <p class="mx-1">(34)</p> 
+                    </div>
+                    <a href="#" class="btn btn-style fw-bold mon">Ajouter au panier</a>
+                  </div>
+                </div>
+              </div>
+         
+        
+        
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center mt-4">
+                  <li class="page-item">
+                    <a class="page-link mt-1"  href="#" aria-label="Previous">
+                      <!-- <span aria-hidden="true">&laquo;</span> -->
+                      <img src="https://img.icons8.com/small/16/000000/back.png"/>
+                    </a>
+                  </li>
+                  <li class="page-item px-2"><a class="page-link fs-5" href="#">1</a></li>
+                  <li class="page-item px-2"><a class="page-link fs-5" href="#">2</a></li>
+                  <li class="page-item px-2"><a class="page-link fs-5" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link mt-1" href="#" aria-label="Next">
+                      <!-- <span aria-hidden="true">&raquo;</span> -->
+                      <img src="https://img.icons8.com/small/16/000000/forward.png"/>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+          </div> 
+        
+          <div class="container mt-5">
+            <h2 class="mon mb-4 ">Autres catégories vous pourriez aimer</h2>
+        
+            <div class="row d-flex row-cols-2">
+              <div class="grid col-md-3" onclick="location.href='nos-huiles2.html';" style="cursor: pointer;">
+                <figure class="effect-sadie">
+                    <img src="img/minifich9.jpg" class="img-fluid" alt="img02"/>
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.2)"></div>
+                    <figcaption>
+                        <p><a class="text-decoration-none text-light fw-bold fs-4" href="nos-huiles2.html">cosmétiques</a></p>
+                    </figcaption>			
+                </figure>
+              </div>
+              <div class="grid col-md-3" onclick="location.href='nos-huiles2.html';" style="cursor: pointer;">
+                <figure class="effect-sadie">
+                    <img src="img/minifich3.jpg" class="img-fluid" alt="img02"/>
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.2)"></div>
+                    <figcaption>
+                        <p><a class="text-decoration-none text-light fw-bold fs-4" href="nos-huiles2.html">Nos Selection</a></p>
+                    </figcaption>			
+                </figure>
+              </div>
+              <div class="grid col-md-3" onclick="location.href='nos-huiles2.html';" style="cursor: pointer;">
+                <figure class="effect-sadie">
+                    <img src="img/minifich10.jpg" class="img-fluid" alt="img02"/>
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.2)"></div>
+                    <figcaption>
+                        <p><a class="text-decoration-none text-light fw-bold fs-4" href="nos-huiles2.html">nouveauté</a></p>
+                    </figcaption>			
+                </figure>
+              </div>
+              <div class="grid col-md-3" onclick="location.href='nos-huiles2.html';" style="cursor: pointer;">
+                <figure class="effect-sadie">
+                    <img src="img/minifich7.jpg" class="img-fluid" alt="img02"/>
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.2)"></div>
+                    <figcaption>
+                        <p><a class="text-decoration-none text-light fw-bold fs-4" href="nos-huiles2.html">Promo du Mois</a></p>
+                    </figcaption>			
+                </figure>
+              </div>
+          </div>
+
+        <div id="footer"></div>
+   </body>
+
+</html>

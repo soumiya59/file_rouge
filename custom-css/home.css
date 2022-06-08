@@ -36,6 +36,12 @@
   /*Without this, clicking will make it sticky*/
     pointer-events: none;
 }
+.back_txt {
+  position: absolute;
+  top: 20%;
+  left: 3rem;
+  right: 60%;
+}
 
 .big-img{
     background-image: url(../img/back6.jpg);
