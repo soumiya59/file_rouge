@@ -1,10 +1,9 @@
 <html>
    <head>
-        <title>Nos Huiles Essentielles</title>
+        <title>Nos Coffrets</title>
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="icon" href="img/icon.jpg" type="image/x-icon" />
-        <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
         <script> 
         $(function(){
                $("#header").load("./include/Header.html"); 
@@ -22,14 +21,13 @@
                 box-shadow: 0 0 5px rgba(0,0,0,.2);
                 padding: 10px;
             }
-
         </style>
    </head>
    
    <body>
         <div id="header"></div>
         <div class="container text-center py-4 pt-5 ban " style="color: #9e121b;">
-            <h1 class="titre">Huiles Essentielles</h1>
+            <h1 class="titre">Nos Coffrets</h1>
         </div> <hr>
 
         <div class="container">
@@ -44,8 +42,10 @@
                 </form>
             </div>
         </div><hr>
-        <div class="container ban mt-2 " >
-            <div class="cards row row-cols-2 d-flex justify-content-center " id="products"> </div>
+
+        <div class="container ban mt-2">
+            <!-- data from json file -->
+            <div class="cards row row-cols-2 d-flex justify-content-center " id="alldata"> </div>
 
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center mt-4">
@@ -108,82 +108,15 @@
                     </figure>
                   </div>
             </div>
+
         </div>
         
+
         <div id="footer"></div>
-
-    <script>
-
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = JSON.parse(this.responseText);
-            // console.log(data);
-            var products = "",
-	            categories = "",
-	            names = "",
-	            rates = "";
-            for (var i = 0; i < data.length; i++) {
-                var categorie = data[i].categorie,
-                    name = data[i].name,
-                    rate = data[i].rate,
-                    price = data[i].price,
-                    rawPrice = price.replace("$",""),
-                    rawPrice = parseInt(rawPrice.replace(",","")),
-                    image = data[i].image;
-                    ajouter  =  "<a href='#' class='btn btn-style fw-bold mon mb-3'>Ajouter au panier</a>";
-                //create product cards
-                products += "<div class=' col-xs-6 col-md-3 product ' data-categorie='" + categorie + "' data-name='" + name +  "' data-price='" + rawPrice + "'><div class='product-inner text-center'><img class='card-img-top' src='" + image + "'> " +  "<br />" + name + "<br />" + price + "<br />" + rate +  ajouter+  "</div></div>";
-                //create dropdown of categories
-                if (categories.indexOf("<option value='" + categorie + "'>" + categorie + "</option>") == -1) {
-                    categories += "<option value='" + categorie + "'>" + categorie + "</option>";
-                }
-            }
-            $("#products").html(products);
-            $(".filter-categorie").append(categories);
-
-        }
-    };
-    xmlhttp.open("GET", "./include/huiles.json", true);
-    xmlhttp.send();
-    
-
-
-    var filtersObject = {};
-    
-    //on filter change
-    $(".filter").on("change",function() {
-        var filterName = $(this).data("filter"),
-            filterVal = $(this).val();
-        
-        if (filterVal == "") {
-            delete filtersObject[filterName];
-        } else {
-            filtersObject[filterName] = filterVal;
-        }
-        
-        var filters = "";
-        
-        for (var key in filtersObject) {
-              if (filtersObject.hasOwnProperty(key)) {
-                filters += "[data-"+key+"='"+filtersObject[key]+"']";
-             }
-        }
-        
-        if (filters == "") {
-            $(".product").show();
-        } else {
-            if((filters == "Prix croissant")){
-
-            }else{
-                $(".product").hide();
-                $(".product").hide().filter(filters).show();
-            }
-
-        }
-    });
-    
-    </script>
+        <script>
+            console.log('hh')
+        </script>
+        <script src="custom-js/scripts.js"></script>
 
    </body>
 

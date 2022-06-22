@@ -1,0 +1,98 @@
+[
+    {
+        "categorie": "Coffret aromatique",
+        "id":1,
+        "name": "Huile essentielle d'amande",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(11)</p></div>",
+        "price": 56,
+        "image": "./img/oud.png"
+    },
+    {
+        "categorie": "Coffret aromatique",
+        "id":2,
+        "name": "Huile essentielle d'Argane",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(31)</p></div>",
+        "price": 65,
+        "image": "./img/cypres.png"
+    },    {
+        "categorie": "Coffret aromatique",
+        "id":3,
+        "name": "Huile essentielle de Rose",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(12)</p></div>",
+        "price": 65,
+        "image": "./img/alcoolat-rose.png"
+    },    {
+        "categorie": "Coffret aromatique",
+        "id":4,
+        "name": "Huile essentielle de Jojoba",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(18)</p></div>",
+        "price": 65,
+        "image": "./img/jasmin.png"
+    },
+    
+    {
+        "categorie": "Coffret decouverte des huiles vegetales",
+        "id":9,
+        "name": "Huile essentielle de Jasmin",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
+        "price": 34,
+        "image": "./img/jasmin.png"
+    },
+    {
+        "categorie": "Coffret decouverte des huiles vegetales",
+        "id":10,
+        "name": "Huile essentielle de tubereuse",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(31)</p></div>",
+        "price": 66,
+        "image": "./img/tubereuse.png"
+    },    {
+        "categorie": "Coffret decouverte des huiles vegetales",
+        "id":11,
+        "name": "Huile essentielle de cannelle",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(12)</p></div>",
+        "price": 77,
+        "image": "./img/bott.png"
+    },    {
+        "categorie": "Coffret decouverte des huiles vegetales",
+        "id":12,
+        "name": "Huile essentielle d'ambre",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(18)</p></div>",
+        "price": 86,
+        "image": "./img/ambre-gris.png"
+    },
+
+
+    {
+        "categorie": "Coffret Bien étre avec diffuseur",
+        "id":17,
+        "name": "Huile essentielle de Citron",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
+        "price": 50,
+        "image": "./img/ambre-gris.png"
+    },
+    {
+        "categorie": "Coffret Bien étre avec diffuseur",
+        "id":18,
+        "name": "Huile essentielle de Basilic",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
+        "price": 40,
+        "image": "./img/candle.png"
+    },
+    {
+        "categorie": "Coffret Bien étre avec diffuseur",
+        "id":19,
+        "name": "Huile essentielle de Gingembre",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
+        "price": 45,
+        "image": "./img/ambre-gris.png"
+    },
+    {
+        "categorie": "Coffret Bien étre avec diffuseur",
+        "id":20,
+        "name": "Huile essentielle de Lavendin",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
+        "price": 36,
+        "image": "./img/candle.png"
+    }    
+    
+]

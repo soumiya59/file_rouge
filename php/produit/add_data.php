@@ -6,10 +6,10 @@ $nom_reviewer = $email_reviewer = $titre_comment = $txt_comment = '';
 
   // Validate input
   if (!empty($_POST['nom_reviewer'])) {
-    $nom_reviewer = filter_input(INPUT_POST, 'nom_reviewer', FILTER_SANITIZE_EMAIL);
+    $nom_reviewer = filter_input(INPUT_POST, 'nom_reviewer', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   }
   if (!empty($_POST['email_reviewer'])) {
-    $email_reviewer = filter_input(INPUT_POST,'email_reviewer',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $email_reviewer = filter_input(INPUT_POST,'email_reviewer',FILTER_SANITIZE_EMAIL);
   }
   if (!empty($_POST['titre_comment'])) {
     $titre_comment = filter_input(INPUT_POST,'titre_comment',FILTER_SANITIZE_FULL_SPECIAL_CHARS);

@@ -1,0 +1,46 @@
+<html>
+   <head>
+        <title>Panier</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="icon" href="img/icon.jpg" type="image/x-icon" />
+        <script> 
+        $(function(){
+               $("#header").load("./include/Header.html"); 
+               $.get('./include/Header.html', function() {
+                    $('.huiles').css('fontWeight','bold');
+               });
+               $("#footer").load("./include/Footer.html");
+        });
+        </script> 
+
+   </head>
+   
+    <body onload="getCartItems()">
+        <div id="header"></div>
+
+        <div class="container mt-3 ban " id="cart_container" style="min-height:700px ;">
+            <h2 class="my-5">PANIER D’ACHATS (<span id="cart"></span>)</h2><hr>
+
+            <div class="row" id="cart_data"></div>
+            <div class="table-responsive mt-3">
+                <table class="table table-bordered">
+                    <tr>
+                        <td><h4>Total</h4> </td>
+                        <td class="text-end fs-5" id="total"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="d-flex">
+                <a href="#" class=" caisse_btn ms-auto btn btn-style fw-bold mon btn-plus mb-5" > PASSER À LA CAISSE </a>
+            </div>
+        </div>
+
+        <div id="footer"></div>
+
+        <script src="custom-js/scripts.js"></script>
+
+
+    </body>
+
+</html>
