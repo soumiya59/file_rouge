@@ -1,7 +1,7 @@
 let products;
 function loadData(){
     $.ajax({
-        url: 'include/coffrets.json',
+        url: 'include/Coffrets.json',
         success: function(data){
             products = data;
             var categories = ""
@@ -9,7 +9,7 @@ function loadData(){
                 $('#alldata').append(`
                 <div class=' col-xs-6 col-md-3 product ' data-categorie='${data[i].categorie}'>
                     <div class='product-inner text-center'>
-                        <img class='card-img-top' src='${data[i].image}'>
+                        <img class='card-img-top' src='${data[i].image}' style="max-height: 250px;">
                         <div class='mt-2'>
                             ${data[i].name} <br>
                             ${data[i].price} DH<br>
@@ -83,7 +83,7 @@ function addCartItemsToDom(items){
               <p class="card-text"><small class="text-muted">ML : 20ML</small></p>
             </div>
 
-            <div class="col d-flex h-25 justify-content-end">
+            <div class="col d-flex h-25 justify-content-end pt-3">
                     <span class="btn btn-default btn-qty h-50 py-0" onclick="incrementValue()">
                      <span class="glyphicon glyphicon-plus fs-6" aria-hidden="true" >+</span>
                     </span>

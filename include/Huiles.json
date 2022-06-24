@@ -1,106 +1,129 @@
 [
     {
-        "categorie": "Coffret aromatique",
+        "categorie": "Cosmétique",
         "id":1,
-        "name": "ESSLUX Huile Essentielle pour Diffuseurs",
+        "name": "Huile essentielle d'amande",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(11)</p></div>",
         "price": 56,
-        "image": "./img/coffrets18.jpg"
+        "image": "./img/oud.png"
     },
     {
-        "categorie": "Coffret aromatique",
+        "categorie": "Cosmétique",
         "id":2,
-        "name": "ASAKUKI Kit Huile Essentielle ",
+        "name": "Huile essentielle d'Argane",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(31)</p></div>",
         "price": 65,
-        "image": "./img/coffrets17.jpg"
+        "image": "./img/cypres.png"
     },    {
-        "categorie": "Coffret aromatique",
+        "categorie": "Cosmétique",
         "id":3,
-        "name": "Westars Coffret Huile Essentielle De Noël",
+        "name": "Huile essentielle de Rose",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(12)</p></div>",
         "price": 65,
-        "image": "./img/coffrets6.jpg"
+        "image": "./img/alcoolat-rose.png"
     },    {
-        "categorie": "Coffret aromatique",
+        "categorie": "Cosmétique",
         "id":4,
-        "name": "Huiles Essentielles Naturelles",
+        "name": "Huile essentielle de Jojoba",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(18)</p></div>",
         "price": 65,
-        "image": "./img/coffrets7.jpg"
+        "image": "./img/jasmin.png"
     },
+
     
     {
-        "categorie": "Coffret decouverte des huiles vegetales",
-        "id":9,
-        "name": "Kit d'huiles essentielles fruitées",
+        "categorie": "Vegetable",
+        "id":5,
+        "name": "Huile essentielle de Jasmin",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 34,
-        "image": "./img/coffrets8.jpg"
-
+        "image": "./img/jasmin.png"
     },
     {
-        "categorie": "Coffret decouverte des huiles vegetales",
-        "id":10,
-        "name": "ASAKUKI Huile Essentielle Florale",
+        "categorie": "Vegetable",
+        "id":6,
+        "name": "Huile essentielle de tubereuse",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(31)</p></div>",
         "price": 66,
-        "image": "./img/coffrets9.jpg"
-
+        "image": "./img/tubereuse.png"
     },    {
-        "categorie": "Coffret decouverte des huiles vegetales",
-        "id":11,
+        "categorie": "Vegetable",
+        "id":7,
         "name": "Huile essentielle de cannelle",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(12)</p></div>",
         "price": 77,
-        "image": "./img/coffrets10.jpg"
-
+        "image": "./img/bott.png"
     },    {
-        "categorie": "Coffret decouverte des huiles vegetales",
-        "id":12,
-        "name": "ASAKUKI Kit Huile Essentielle Aromathérapie",
+        "categorie": "Vegetable",
+        "id":8,
+        "name": "Huile essentielle d'ambre",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(18)</p></div>",
-        "price": 86,
-        "image": "./img/coffrets11.jpg"
-
+        "price": 8,
+        "image": "./img/ambre-gris.png"
     },
 
 
     {
-        "categorie": "Coffret Bien étre avec diffuseur",
-        "id":17,
-        "name": "Huile Essentielle pour Diffuseur",
+        "categorie": "Alimentaire",
+        "id":9,
+        "name": "Huile essentielle de Citron",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 50,
-        "image": "./img/coffrets12.jpg"
-
+        "image": "./img/ambre-gris.png"
     },
     {
-        "categorie": "Coffret Bien étre avec diffuseur",
-        "id":18,
-        "name": "ESSLUX Huile Essentielle pour Diffuseurs",
+        "categorie": "Alimentaire",
+        "id":10,
+        "name": "Huile essentielle de Basilic",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 40,
-        "image": "./img/coffrets13.jpg"
-
+        "image": "./img/candle.png"
     },
     {
-        "categorie": "Coffret Bien étre avec diffuseur",
-        "id":19,
-        "name": "Huiles  pour Aromathérapie Diffuseurs ",
+        "categorie": "Alimentaire",
+        "id":11,
+        "name": "Huile essentielle de Gingembre",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 45,
-        "image": "./img/coffrets3.jpg"
-
+        "image": "./img/ambre-gris.png"
     },
     {
-        "categorie": "Coffret Bien étre avec diffuseur",
-        "id":20,
-        "name": "Huiles Essentielles pour Diffuseurs",
+        "categorie": "Alimentaire",
+        "id":12,
+        "name": "Huile essentielle de Lavendin",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 36,
-        "image": "./img/coffrets15.jpg"
+        "image": "./img/candle.png"
+    },
 
-    }    
-    
+    {
+        "categorie": "Nos Selection",
+        "id":13,
+        "name": "Huile essentielle de Jasmin",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
+        "price": 34,
+        "image": "./img/jasmin.png"
+    },
+    {
+        "categorie": "Nos Selection",
+        "id":14,
+        "name": "Huile essentielle de tubereuse",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(31)</p></div>",
+        "price": 66,
+        "image": "./img/tubereuse.png"
+    },    {
+        "categorie": "Nos Selection",
+        "id":15,
+        "name": "Huile essentielle de cannelle",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(12)</p></div>",
+        "price": 56,
+        "image": "./img/bott.png"
+    },    {
+        "categorie": "Nos Selection",
+        "id":16,
+        "name": "Huile essentielle d'ambre",
+        "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(18)</p></div>",
+        "price": 55,
+        "image": "./img/ambre-gris.png"
+    }
 ]
