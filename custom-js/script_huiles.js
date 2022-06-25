@@ -113,19 +113,29 @@ function addCartItemsToDom(items){
 
 
 function deleteProduct(id){
+    // get the choosen products
     let choosen_products =[]
     let items = JSON.parse(localStorage.getItem('userCart'));
-
     for(let i=0;i<items.length;i++){
         choosen_products.push(products.find((product)=>product.id == items[i]));
     }
-    console.log(choosen_products)
-    console.log(id)
-    choosen_products.splice(id-1,1)
-    console.log(choosen_products)
+    // delete product from the list
+    for(let i=0;i<choosen_products.length;i++){
+       if(choosen_products[i].id == id ){
+        console.log('deleted' +i);
+        choosen_products.splice(i,1)
+        break;
+       }
+    }
+    // delete product from localstorage
+    let arry = []
+    for(let i=0;i<choosen_products.length;i++){
+        arry.push(choosen_products[i].id)
+    }
+    localStorage.setItem('userCart',JSON.stringify(arry));
+    // display the products left
     $('#cart_data').html('<p><p>')
     addCartItemsToDom(choosen_products)
-    console.log('deleted ' + (id-1))
 
 }
 
