@@ -2,165 +2,76 @@
    <head>
         <title>Blog</title>
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="icon" href="img/icon.jpg" type="image/x-icon" />
-
         <script> 
         $(function(){
                $("#header").load("./include/Header.html"); 
                $.get('./include/Header.html', function() {
-                    $('.blog').css('fontWeight','bold');
+                    $('.huiles').css('fontWeight','bold');
                });
                $("#footer").load("./include/Footer.html");
         });
         </script> 
    </head>
+   
+   <body>
+        <div id="header"></div>
 
-  <body>
-
-      <div id="header"></div>
-
-      <div class="container ban mt-5">
-        <div class="d-flex justify-content-center my-5">
-            <hr style="width:25%;text-align:left;margin-left:0;height: 2px;">        
-            <h1 class="mx-md-4" style="color: #9e121b;" > NOTRE BLOG</h1>
-            <hr style="width:25%;text-align:right;margin-right:0;height: 2px;">
-        </div>
-    
-        <ul class="blog row d-flex mx-xl-5 list-unstyled d-xs-none row-cols-2 ">
-            <li class="col col-sm-2 text-md-center"><h5><a href="" class="text-reset fw-bold"><ins>Ingredients</ins></a></h5></li>
-            <li class="col col-sm-2 text-md-center"><h5><a href="" class="text-reset fw-bold"><ins>Santé</ins>  </a></h5></li>
-            <li class="col col-sm-2 text-md-center"><h5><a href="" class="text-reset fw-bold"><ins>Aromatherapy</ins> </a></h5></li>
-            <li class="col col-sm-2 text-md-center"><h5><a href="" class="text-reset fw-bold"><ins>Conseils</ins> </a></h5></li>
-            <li class="col col-sm-2 text-md-center"><h5><a href="" class="text-reset fw-bold"><ins>Recettes</ins> </a></h5></li>
-            <li class="col col-sm-2 text-md-center"><h5><a href="" class="text-reset fw-bold"><ins>Cosmétique</ins> </a></h5></li>
-        </ul>
-    
-        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4 mt-5" >
-            <div class="col">
-              <div class="card">
-                <img src="img/minifich8.jpg" class="card-img-top"/>
-                <div class="card-body" >
-                  <h5 class="card-title fs-4">New Spring Limited Edition Blends & Sets</h5>
-                  <p class="card-text">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, similique? Laudantium illum eveniet ex culpa cumque ad atque distinctio aperiam commodi repudiandae? Fugiat,
-                  </p>
-                </div>
-              </div>
+        <div class="container ban mt-5">
+            <div class="d-flex justify-content-center mt-5">
+                <hr style="width:25%;text-align:left;margin-left:0;height: 2px;">        
+                <h1 class="mx-md-4" style="color: #9e121b;" > NOTRE BLOG</h1>
+                <hr style="width:25%;text-align:right;margin-right:0;height: 2px;">
             </div>
-            <div class="col">
-              <div class="card">
-                <img src="img/minifich10.jpg" class="card-img-top"/>
-                <div class="card-body">
-                  <h5 class="card-title fs-4">Top Essential Oil Uses & Benefits</h5>
-                  <p class="card-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat exercitationem incidunt a, alias laborum animi corrupti quis temporibus, quia inventore est aspernatur suscipit rem quae?
-                      Lorem 
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="img/minifich7.jpg" class="card-img-top" style="max-height: 17.3rem;" />
-                <div class="card-body">
-                  <h5 class="card-title fs-4">Which Essential Oils Improve Blood Flow?</h5>
-                  <p class="card-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos iste amet minus, assumenda, quam nobis ipsa quidem eveniet illo soluta? Saepe veritatis 
-                  </p>
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
-            <div class="col">
-              <div class="card">
-                <img src="img/minifich8.jpg" class="card-img-top"/>
-                <div class="card-body">
-                  <h5 class="card-title fs-4">New Spring Limited Edition Blends & Sets</h5>
-                  <p class="card-text">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, similique? Laudantium illum eveniet ex culpa cumque ad atque distinctio aperiam commodi repudiandae? Fugiat,
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="img/minifich10.jpg" class="card-img-top"/>
-                <div class="card-body">
-                  <h5 class="card-title fs-4">Top Essential Oil Uses & Benefits</h5>
-                  <p class="card-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat exercitationem incidunt a, alias laborum animi corrupti quis temporibus, quia inventore est aspernatur suscipit rem quae?
-                      Lorem 
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="img/minifich7.jpg" class="card-img-top" style="max-height: 17.3rem;"/>
-                <div class="card-body">
-                  <h5 class="card-title fs-4">Which Essential Oils Improve Blood Flow?</h5>
-                  <p class="card-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos iste amet minus, assumenda, quam nobis ipsa quidem eveniet illo soluta? Saepe veritatis 
-                  </p>
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
-            <div class="col">
-              <div class="card">
-                <img src="img/minifich8.jpg" class="card-img-top"/>
-                <div class="card-body">
-                  <h5 class="card-title fs-4">New Spring Limited Edition Blends & Sets</h5>
-                  <p class="card-text">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, similique? Laudantium illum eveniet ex culpa cumque ad atque distinctio aperiam commodi repudiandae? Fugiat,
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="img/minifich10.jpg" class="card-img-top"/>
-                <div class="card-body">
-                  <h5 class="card-title fs-4">Top Essential Oil Uses & Benefits</h5>
-                  <p class="card-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat exercitationem incidunt a, alias laborum animi corrupti quis temporibus, quia inventore est aspernatur suscipit rem quae?
-                      Lorem 
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="img/minifich7.jpg" class="card-img-top" style="max-height: 17.3rem;"/>
-                <div class="card-body">
-                  <h5 class="card-title fs-4">Which Essential Oils Improve Blood Flow?</h5>
-                  <p class="card-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos iste amet minus, assumenda, quam nobis ipsa quidem eveniet illo soluta? Saepe veritatis 
-                  </p>
-                </div>
-              </div>
-            </div>
-        </div>
-         
-    
-        <nav aria-label="Page navigation example ">
-            <ul class="pagination justify-content-center my-5 ">
-              <li class="page-item disabled">
-                <a class="page-link fs-5">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link fs-5" href="#">1</a></li>
-              <li class="page-item"><a class="page-link fs-5" href="#">2</a></li>
-              <li class="page-item"><a class="page-link fs-5" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link fs-5" href="#">Next</a>
-              </li>
+        
+            <ul class="blog row d-flex mx-xl-5 list-unstyled d-xs-none row-cols-2 my-5"  id="categories">
+                <li class="col-3 text-center text-decoration-underline fs-5" id="all" style="cursor: pointer;">All</li>
+                <li class="col-3 text-center text-decoration-underline fs-5" id="sante" style="cursor: pointer;">Santé</li>
+                <li class="col-3 text-center text-decoration-underline fs-5" id="conseils" style="cursor: pointer;">Conseils</li>
+                <li class="col-3 text-center text-decoration-underline fs-5" id="recettes" style="cursor: pointer;">Recettes</li>
             </ul>
-        </nav>
-      </div>
 
+            <div class="cards row row-cols-2 d-flex justify-content-center " id="alldata"> </div>
 
-<div id="footer"></div>
-</body>
+            <nav aria-label="Page navigation example ">
+                <ul class="pagination justify-content-center my-5 ">
+                  <li class="page-item disabled">
+                    <a class="page-link fs-5">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link fs-5" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link fs-5" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link fs-5" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link fs-5" href="#">Next</a>
+                  </li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <!-- s'abonner vous -->
+        <div class="text-light mt-2">.</div>
+        <div class="container ban pt-4" style="background-color: #f3f3f3; border-top: 1px solid rgb(217, 216, 216); ">
+          <div class="row ">
+            <h4 class="col align-items-center mon pt-md-2">Inscrivez-vous à newsletter</h4>
+            <form action="" class=" col d-flex text-md-end justify-content-end">
+              <div class="form-outline mb-2 ">
+                <input type="email" class="form-control bg-light" style="width: 300px;" />
+                <label class="form-label " >Email address</label>
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-plus lato w-auto px-2 rounded-0 rounded-end">Submit</button>
+              </div>                
+            </form>
+          </div>
+        </div>
+        
+
+        <div id="footer"></div>
+
+        <script src="custom-js/blog.js"></script>
+
+   </body>
+
 </html>
