@@ -1,32 +1,21 @@
 <?php
-class user{
-    public $firstName;
-    public $lastName;
-    public $email;
-    public $password;
-    public function __construct($firstName,$lastName,$email,$password)
-    {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->email = $email;
-        $this->pswd = $password;
-    }
-    function connecter(){
+class CRUD{
+    public static function connecter(){
         define('DB_HOST','localhost');
         define('DB_USER','newuser');
         define('DB_PASSWORD','password');
         define('DB_NAME','CRUD');
         $conn = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
         if($conn->connect_error){
-            die('connection failed' . $conn->connect_error);
+            die('connection failed : ' . $conn->connect_error);
         }else{
             return $conn;
         }
     }
-    public function ajouter($table){
-        $retConn = $this->connecter();
+    public static function ajouter($table,$firstname,$lastname,$email,$pswd){
+        $retConn = self::connecter();
         if($retConn != null){
-            $sql = "INSERT INTO ".$table." (firstName,lastName,email,pswd) VALUES ('$this->firstName', '$this->lastName', '$this->email', '$this->pswd')";
+            $sql = "INSERT INTO ".$table." (firstName,lastName,email,pswd) VALUES ('$firstname', '$lastname', '$email', '$pswd')";
             if (mysqli_query($retConn, $sql)) {
               echo "User Ajouté";
             } else {
@@ -34,8 +23,8 @@ class user{
             }
         }
     }
-    public function ajouter_poo($table,$firstName,$lastName,$email,$password){
-        $retConn = $this->connecter();
+    public static function ajouter_poo($table,$firstName,$lastName,$email,$password){
+        $retConn = self::connecter();
         if($retConn != null){
             $sql = "INSERT INTO ".$table." (user_first_name,user_last_name,user_email,user_password) VALUES ('$firstName', '$lastName', '$email', '$password')";
             if (mysqli_query($retConn, $sql)) {
@@ -46,8 +35,8 @@ class user{
         }
     }
 
-    public function show_all_users($table){
-        $retConn = $this->connecter();
+    public static function show_all_users($table){
+        $retConn = self::connecter();
         if($retConn != null){
             $sql= "SELECT * FROM ".$table." ";
             $result = $retConn->query($sql);
@@ -61,8 +50,8 @@ class user{
             }
         }
     }
-    public function show_user($table,$id){
-        $retConn = $this->connecter();
+    public static function show_user($table,$id){
+        $retConn = self::connecter();
         if($retConn != null){
             $sql= "SELECT * FROM ".$table." WHERE id=".$id ;
             $result = $retConn->query($sql);
@@ -73,8 +62,8 @@ class user{
             $result->close();
         }
     }
-    public function delete($table,$id){
-        $retConn = $this->connecter();
+    public static function delete($table,$id){
+        $retConn = self::connecter();
         if($retConn != null){
             $sql= "DELETE FROM ".$table." WHERE id='".$id."'";
             if (mysqli_query($retConn, $sql)) {
@@ -86,9 +75,8 @@ class user{
         }
     }
 
-    public function update($table,$id,$newFirstName,$newLastName,$newEmail,$newPswd)
-    {
-        $retConn = $this->connecter($table);
+    public static function update($table,$id,$newFirstName,$newLastName,$newEmail,$newPswd){
+        $retConn = self::connecter($table);
         if($retConn != null){
             $sql = "UPDATE ".$table." SET firstName='" .$newFirstName. "', lastName='" .$newLastName. "' ,email='" .$newEmail. "' ,pswd= '".$newPswd. "'  WHERE id='".$id."'";
             if($retConn->query($sql)){
@@ -101,11 +89,10 @@ class user{
     }
 }
 
-$user1 = new user('somaya','ayouch','somaya@gmail.com','password');
-// echo $user1->ajouter("user");
-// echo $user1->show_all_users("user");
-// echo $user1->show_user("user",2);
-// echo $user1->delete("user",3);
-// echo $user1->update("user",5,"soma","soka","shit@gmail.com","ss111");
+echo CRUD::ajouter("user","sokaina","sokaina","mlll@gmail.com","ss111");
+// echo CRUD::show_user("user",2);
+// echo CRUD::show_all_users("user");
+// echo CRUD::update("user",3,"sara","sokan","mlll@gmail.com","ss111");
+// echo CRUD::delete("user",9);
 
 ?>

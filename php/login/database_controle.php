@@ -1,16 +1,5 @@
 <?php
-class user{
-    public $firstName;
-    public $lastName;
-    public $email;
-    public $password;
-    public function __construct($firstName,$lastName,$email,$password)
-    {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->email = $email;
-        $this->pswd = $password;
-    }
+class CRUD{
     function connecter(){
         define('DB_HOST','localhost');
         define('DB_USER','newuser');
@@ -23,9 +12,8 @@ class user{
             return $conn;
         }
     }
-
     public function ajouter($table){
-        $retConn = $this->connecter();
+        $retConn = self::connecter();
         if($retConn != null){
             $firstName=$_POST['FirstName'];
             $lastName=$_POST['lastName'];
@@ -40,7 +28,7 @@ class user{
         }
     }
     public function delete($table){
-        $retConn = $this->connecter();
+        $retConn = self::connecter();
         if($retConn != null){
             $sql= "DELETE FROM ".$table." WHERE id='".$_POST['user_id_delete']."'";
             if (mysqli_query($retConn, $sql)) {
@@ -51,24 +39,21 @@ class user{
             $retConn->close();
         }
     }
-
     public function show_user($table){
-        $retConn = $this->connecter();
+        $retConn = self::connecter();
         if($retConn != null){
             $user_id = $_POST['user_id_show'];
             $sql= "SELECT * FROM ".$table." WHERE id=".$user_id ;
             $result = $retConn->query($sql);
             while ($user = $result->fetch_assoc()){
-                echo '<p>'.$user['user_first_name'].' '.$user['user_last_name'] .'</p>';
+                echo '<p>'. $user['id'].' - '. $user['user_first_name'].' '.$user['user_last_name'] .'</p>';
                 echo '<p>Email: '.$user['user_email'].' || Password: '.$user['user_password'] .'</p><hr>';
             }
             $result->close();
         }
     }
-
-    public function update($table)
-    {
-        $retConn = $this->connecter($table);
+    public function update($table){
+        $retConn = self::connecter($table);
         if($retConn != null){
             $id=$_POST['id_update'];
             $newFirstName=$_POST['newFirstName'];
@@ -86,27 +71,25 @@ class user{
     }
 }
 
-$user1 = new user($_POST['lastname'],$_POST['firstname'],$_POST['email'],$_POST['pswd']);
-
 if(!empty($_POST['pswd'])){
-    echo $user1->ajouter("users");
+    echo CRUD::ajouter("users");
 }
 if(!empty($_POST['user_id_delete'])){
-    echo $user1->delete("users");
+    echo CRUD::delete("users");
 }
 if(!empty($_POST['user_id_show'])){
-    echo $user1->show_user("users");
+    echo CRUD::show_user("users");
 }
 if(!empty($_POST['newPswd'])){
-    echo $user1->update("users");
+    echo CRUD::update("users");
 }
 
 ?>
 <html>
     <body>
         <div style="display: flex; justify-content:space-between">
-           <h2>DATABASE CONTROLE INTERFACE</h2>
-           <a href="./users.php" style="padding-top: 2rem;">SHOW ALL USERS</a>
+           <h2>GESTION DES UTILISATEURS</h2>
+           <a href="./users.php" target="_blank" style="padding-top: 2rem;">SHOW ALL USERS</a>
         </div>
         <form action="" method="POST">
             <fieldset>
@@ -116,19 +99,19 @@ if(!empty($_POST['newPswd'])){
                 Email : <input type="email" name="email" ><br>
                 Password : <input type="password" name="pswd" ><br>
                 <input type="button" name="add" value="ADD" onclick="this.form.submit()"><br>
-            </fieldset>
+            </fieldset><br>
             <fieldset>
                 <legend>Delete User</legend>
                 ID : <input type="text" name="user_id_delete">
                 <button type="submit">delete</button>
-            </fieldset>
+            </fieldset><br>
             <fieldset>
                 <legend>Show User</legend>
                 ID : <input type="text" name="user_id_show">
                 <button type="submit" name="show">Show</button>
-            </fieldset>
+            </fieldset><br>
             <fieldset>
-                <legend>update User</legend>
+                <legend>Update User</legend>
                 ID : <input type="text" name="id_update"><br>
                 Nom : <input type="text" name="newLastName"><br>
                 Prenom : <input type="text" name="newFirstName"><br>
