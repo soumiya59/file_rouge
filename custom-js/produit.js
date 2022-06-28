@@ -1,4 +1,23 @@
+// rating stars
+$('.starIcon').on('mouseover', function(){
+    var $this = $(this);
+    $this.nextAll().removeClass('fa-star').addClass( "fa-star-o" );
+    $this.prevAll().removeClass( "fa-star-o" ).addClass('fa-star');
+    $this.removeClass( "fa-star-o" ).addClass('fa-star');
+});
+$('.starIcon').one('click',function(){
+ var $this = $(this); $this.addClass('active').siblings().removeClass('active');
+});
+$('.starIcon').on('mouseleave', function(){
+  var select = $('.active');
+  select.nextAll().removeClass('fa-star').addClass('fa-star-o');
+  select.prevAll().removeClass('fa-star-o').addClass('fa-star');
+  select.removeClass('fa-star-o').addClass('fa-star');
+});
+
+
 // change nombre produit to order
+
 function incrementValue()
 {
     let value = parseInt(document.getElementById('number').value, 10);

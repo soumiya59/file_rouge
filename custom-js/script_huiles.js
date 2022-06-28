@@ -7,10 +7,10 @@ function loadData(){
             var categories = ""
             for(let i=0; i<data.length; i++){
                 $('#alldata').append(`
-                <div class=' col-xs-6 col-md-3 product ' data-categorie='${data[i].categorie}'>
+                <div class=' col-xs-6 col-md-3 product ' data-categorie='${data[i].categorie}'   >
                     <div class='product-inner text-center'>
-                        <img class='card-img-top' src='${data[i].image}'>
-                        <div class='mt-2'>
+                        <img class='card-img-top' src='${data[i].image}'  style='cursor: pointer;' onclick="addToLocal(${data[i].id})">
+                        <div class='mt-2' onclick="getProductInfo()">
                             ${data[i].name} <br>
                             ${data[i].price} DH<br>
                             ${data[i].rate}
@@ -29,6 +29,44 @@ function loadData(){
     })
 }
 loadData();
+let prod = []
+function addToLocal(id){
+    console.log(id)
+    prod.push(id)
+    localStorage.setItem('productInfo',JSON.stringify(prod));
+    let products = JSON.parse(localStorage.getItem('productInfo'));
+    console.log(products)
+
+}
+function getProductInfo(){
+    let choosen_product =[]
+    let products = JSON.parse(localStorage.getItem('productInfo'));
+    for(let i=0;i<products.length;i++){
+        choosen_product.push(products.find((product)=>product.id == products[i]));
+    }    
+    console.log(choosen_product)
+
+    // addProductToDom(choosen_product)
+}
+function addProductToDom(products){
+    for(let i=0; i<products.length; i++){
+        $('#product_data').append(`
+        <div class="row justify-content-between align-items-center">
+            <div class="col">
+              <img src="${products[0].image}" class="img-fluid rounded-start py-3" style="min-width: 20px;max-height: 200px;">
+            </div>
+            <div class="col ">
+              <h5 class="card-title">${products[0].name}</h5>
+              <p class="card-text"><small class="text-muted">ML : 20ML</small></p>
+            </div>
+        </div>
+       </div>         
+        `);
+    }
+
+}
+
+
 
 
 let arr = []
@@ -39,6 +77,8 @@ function addToCart(id,ele){
     $('#cart').html(items.length)
     $(ele).attr('disabled','disabled')
 }
+
+
 function getCartItems(){
     let choosen_products =[]
     let items = JSON.parse(localStorage.getItem('userCart'));
@@ -99,7 +139,7 @@ function addCartItemsToDom(items){
 
             <div class="col text-center">
               <button onclick="deleteProduct(${items[i].id})" class="border-0 bg-light" id="deleteProduct">
-                <img class="" src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-delete-ui-dreamstale-lineal-dreamstale-2.png" height="20px" width="20px"/>
+                <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-delete-ui-dreamstale-lineal-dreamstale-2.png" height="20px" width="20px"/>
               </button>
             </div>
         </div>
