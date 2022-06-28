@@ -9,8 +9,10 @@ function loadData(){
                 $('#alldata').append(`
                 <div class=' col-xs-6 col-md-3 product ' data-categorie='${data[i].categorie}'   >
                     <div class='product-inner text-center'>
+                        <a href="../fiche-produit.html">
                         <img class='card-img-top' src='${data[i].image}'  style='cursor: pointer;' onclick="addToLocal(${data[i].id})">
-                        <div class='mt-2' onclick="getProductInfo()">
+                        </a>
+                        <div class='mt-2'>
                             ${data[i].name} <br>
                             ${data[i].price} DH<br>
                             ${data[i].rate}
@@ -29,41 +31,76 @@ function loadData(){
     })
 }
 loadData();
+
 let prod = []
 function addToLocal(id){
-    console.log(id)
     prod.push(id)
     localStorage.setItem('productInfo',JSON.stringify(prod));
-    let products = JSON.parse(localStorage.getItem('productInfo'));
-    console.log(products)
-
+    let item = JSON.parse(localStorage.getItem('productInfo'));
+    // console.log(item)
 }
+
 function getProductInfo(){
-    let choosen_product =[]
-    let products = JSON.parse(localStorage.getItem('productInfo'));
+    let item = JSON.parse(localStorage.getItem('productInfo'));
     for(let i=0;i<products.length;i++){
-        choosen_product.push(products.find((product)=>product.id == products[i]));
+        let choosen_product = products.find((product)=>product.id == item[i]);
+        console.log(choosen_product)
+        addProductToDom(choosen_product)
     }    
-    console.log(choosen_product)
-
-    // addProductToDom(choosen_product)
 }
-function addProductToDom(products){
-    for(let i=0; i<products.length; i++){
-        $('#product_data').append(`
-        <div class="row justify-content-between align-items-center">
-            <div class="col">
-              <img src="${products[0].image}" class="img-fluid rounded-start py-3" style="min-width: 20px;max-height: 200px;">
-            </div>
-            <div class="col ">
-              <h5 class="card-title">${products[0].name}</h5>
-              <p class="card-text"><small class="text-muted">ML : 20ML</small></p>
-            </div>
-        </div>
-       </div>         
-        `);
-    }
 
+function addProductToDom(choosen_product){
+    $('#product_data').append(`
+
+    <div class="col-md-6">
+        <div class="text-center mt-3">
+         <img src="${choosen_product.image}" class=" mx-auto img-fluid d-block " alt="prod img" style="max-width: 450px;">
+        </div>
+        <div class="container d-flex justify-content-center mt-3 justify-content-around">
+           <img src="${choosen_product.image}" alt="" width="32%" class="img-fluid" >
+           <img src="${choosen_product.image}" alt="" width="32%" class="img-fluid" >
+           <img src="${choosen_product.image}" alt="" width="32%" class="img-fluid" >
+        </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-5 ">
+           <h1 class="ban">${choosen_product.name}</h1>
+           <p class="fw-light">100% Huile Thérapeutique Pure</p>
+           <div class="rating d-flex">
+               <i class="fas fa-star"> </i><i class="fas fa-star mx-3"></i><i class="fas fa-star"></i><i class="fas fa-star mx-3"></i><i class="fas fa-star-half"></i> <p class="mx-2">(11)</p> 
+           </div>
+           <div class="col-md-12 bottom-rule d-flex">
+               <h4 class="fw-light py-2">PRIX:</h4>
+               <h2 class="product-price mx-5 mon ">${choosen_product.price} DH</h2>
+           </div> 
+
+           <div>
+               <p class="fw-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique illum consectetur numquam illo nemo! Minus beatae facilis sequi libero unde debitis in voluptatibus ta! Libero facere voluptatibus accusamus praesentium, magni beatae sunt </p>
+           </div>
+         
+           <div class="product-qty d-flex mt-4 justify-content-sm-center justify-content-md-start">
+            <span class="btn btn-default btn-lg btn-qty" onclick="incrementValue()">
+             <span class="glyphicon glyphicon-plus" aria-hidden="true" >+</span>
+            </span>
+       
+            <input class="btn btn-default btn-lg btn-qty" value="1" id="number"/>
+       
+            <span class="btn btn-default btn-lg btn-qty" onclick="decreaseValue()">
+             <span class="glyphicon glyphicon-minus" aria-hidden="true">-</span>
+            </span>
+           </div>
+            <a href="cart.html" class="btn fw-light text-light btn-lg fs-6 px-lg-5 mx-1 mt-4 w-100" style="background-color: brown;">
+                <img class="px-1" width="32px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAACAklEQVRYheXWz4tNcRzG8efLFDPIThbEwgZZsVBsJD+awdKPrR1hTRa2dhZWyn+ADTMiiUaRhUlNk81Y+FF+FsmYZqSXhTu67tzDTPfeUTx1Ft/vec553n3O53POSf574R6e1o4bWDaX+QVrkiytrU8lGS2lnJxLiJ/CTozMZWZpAFiQ5H2S3UledTh7rJTypusXmlImcCvJ7SRfOgzQjYvTdnEYNzscHqzFp2YnlmEcSzoMcAiD8xpPlFLeJhlOsqOTAEn6kgxMA6hpoGboiDA/ya5aTlPDRrxBFWCrAFvwLEmqAoaSfE2yqRMA+VHd/kqAUook15Ps6RDAnlSVf0rYh6F2J2MlxtDzJ2N3zbiizQBHcG1qXdlkpZTxJHfT/mnoy5/KPyUcxdV2JddVddVML5jZ85o5QB8e1+/9ds5LKS+SjCbZ1g6ANCn/TF40/WlfH/Q2AnRVGBsBLuN8kokWwjckWZTk4awASikPamMzmGR+CwCfk5wopXxr4R5/UZiH03iO1ziHhRXe5biEj3iC/e0AOIFhbMI63MG5Cu8gLmA1evEOW1sFeIC+uvV6vG7iW4FP6KrbO1Nr4mmazfd+IsniuvXiNJ+Kyfxo7gUN3slZZE0XDuIlDmAvRnCqwnsF17Edx/EB61sCqIO4i/s4VvXHhB6cxSP0Y3PL4f+svgNleol9d6NmIgAAAABJRU5ErkJggg==">                           
+                Add to cart     
+            </a> <br>
+          <a href="#" class="btn fw-light btn-lg fs-6 px-lg-5 mt-4 w-100" >
+              <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-heart-gambling-dreamstale-lineal-dreamstale-2.png" width="31" class="px-1"/> 
+              Ajouter au favouris 
+          </a>
+          <div class="col text-end mx-3">
+            <span class="monospaced ">In Stock</span>
+          </div>
+   </div> 
+    `);
 }
 
 
