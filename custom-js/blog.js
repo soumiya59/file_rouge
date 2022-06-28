@@ -37,12 +37,12 @@ $('#sante').click(function(){
           for(let i=0; i<data.length; i++){
             if(data[i].categorie == 'santé'){
               $('#alldata').append(`
-              <div class='col-12 col-md-4 mb-4 article' data-categorie='${data[i].categorie}'>
-                  <div class="card border">
+              <div class='col-12 col-md-4 mb-4 article' data-categorie='${data[i].categorie}' style="max-height:100px">
+                  <div class="card border" >
                     <div class="card-header text-center py-2">
                       <p class="fs-6">${data[i].date}</p>
                     </div>
-                    <img src="${data[i].image}" class="card-img-top" style="max-height:300px"/>
+                    <img src="${data[i].image}" class="card-img-top" />
                     <div class="card-body" >
                       <h5 class="card-title fs-4">${data[i].title}</h5>
                       <p class="card-text">${data[i].article}</p>
