@@ -2,7 +2,7 @@
     {
         "categorie": "Coffret aromatique",
         "id":1,
-        "name": "ESSLUX Huile Essentielle pour Diffuseurs",
+        "name": "Huile Essentielle pour Diffuseurs",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(11)</p></div>",
         "price": 56,
         "image": "./img/coffrets18.jpg"
@@ -14,22 +14,25 @@
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(31)</p></div>",
         "price": 65,
         "image": "./img/coffrets17.jpg"
-    },    {
+    },    
+    {
         "categorie": "Coffret aromatique",
         "id":3,
         "name": "Westars Coffret Huile Essentielle De Noël",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(12)</p></div>",
-        "price": 65,
+        "price": 64,
         "image": "./img/coffrets6.jpg"
-    },    {
+    },    
+    {
         "categorie": "Coffret aromatique",
         "id":4,
         "name": "Huiles Essentielles Naturelles",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(18)</p></div>",
-        "price": 65,
+        "price": 62,
         "image": "./img/coffrets7.jpg"
     },
     
+
     {
         "categorie": "Coffret decouverte des huiles vegetales",
         "id":9,
@@ -47,7 +50,8 @@
         "price": 66,
         "image": "./img/coffrets9.jpg"
 
-    },    {
+    },    
+    {
         "categorie": "Coffret decouverte des huiles vegetales",
         "id":11,
         "name": "Huile essentielle de cannelle",
@@ -55,10 +59,11 @@
         "price": 77,
         "image": "./img/coffrets10.jpg"
 
-    },    {
+    },    
+    {
         "categorie": "Coffret decouverte des huiles vegetales",
         "id":12,
-        "name": "ASAKUKI Kit Huile Essentielle Aromathérapie",
+        "name": "Huile Essentielle Aromathérapie",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(18)</p></div>",
         "price": 86,
         "image": "./img/coffrets11.jpg"
@@ -78,7 +83,7 @@
     {
         "categorie": "Coffret Bien étre avec diffuseur",
         "id":18,
-        "name": "ESSLUX Huile Essentielle pour Diffuseurs",
+        "name": "Huile Essentielle pour Diffuseurs",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 40,
         "image": "./img/coffrets13.jpg"

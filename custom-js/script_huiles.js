@@ -4,26 +4,35 @@ function loadData(){
         url: 'include/Huiles.json',
         success: function(data){
             products = data;
-            var categories = ""
+            const prix = []
             for(let i=0; i<data.length; i++){
-                $('#alldata').append(`
-                <div class=' col-xs-6 col-md-3 product ' data-categorie='${data[i].categorie}'   >
-                    <div class='product-inner text-center'>
-                        <a href="../fiche-produit.html">
-                        <img class='card-img-top' src='${data[i].image}'  style='cursor: pointer;' onclick="addToLocal(${data[i].id})">
-                        </a>
-                        <div class='mt-2'>
-                            ${data[i].name} <br>
-                            ${data[i].price} DH<br>
-                            ${data[i].rate}
-                            <button onclick="addToCart(${data[i].id},this)" class='btn btn-style fw-bold mon mb-3'>Ajouter au panier</button>
-                        </div>
-                    </div>
-                </div>          
-                `);
-                var categorie = data[i].categorie
-                if (categories.indexOf("<option value='" + categorie + "'>" + categorie + "</option>") == -1) {
-                    categories += "<option value='" + categorie + "'>" + categorie + "</option>";
+                prix.push(data[i].price)
+            }
+            prix.sort(function(a, b){return a - b});  
+            var categories = ""
+            for(let j=0; j<data.length; j++){
+                for(let i=0; i<data.length; i++){
+                   if(data[i].price == prix[j]){
+                        $('#alldata').append(`
+                        <div class=' col-xs-6 col-md-3 product ' data-categorie='${data[i].categorie}'   >
+                            <div class='product-inner text-center'>
+                                <a href="../fiche-produit.html">
+                                <img class='card-img-top' src='${data[i].image}'  style='cursor: pointer;' onclick="addToLocal(${data[i].id})">
+                                </a>
+                                <div class='mt-2'>
+                                    ${data[i].name} <br>
+                                    ${data[i].price} DH<br>
+                                    ${data[i].rate}
+                                    <button onclick="addToCart(${data[i].id},this)" class='btn btn-style fw-bold mon mb-3'>Ajouter au panier</button>
+                                </div>
+                            </div>
+                        </div>          
+                        `);
+                        var categorie = data[i].categorie
+                        if (categories.indexOf("<option value='" + categorie + "'>" + categorie + "</option>") == -1) {
+                            categories += "<option value='" + categorie + "'>" + categorie + "</option>";
+                        }
+                    }
                 }
             }
             $(".filter-categorie").append(categories);
@@ -44,7 +53,7 @@ function getProductInfo(){
     let item = JSON.parse(localStorage.getItem('productInfo'));
     for(let i=0;i<products.length;i++){
         let choosen_product = products.find((product)=>product.id == item[i]);
-        console.log(choosen_product)
+        // console.log(choosen_product)
         addProductToDom(choosen_product)
     }    
 }
@@ -57,9 +66,9 @@ function addProductToDom(choosen_product){
          <img src="${choosen_product.image}" class=" mx-auto img-fluid d-block " alt="prod img" style="max-width: 450px;">
         </div>
         <div class="container d-flex justify-content-center mt-3 justify-content-around">
-           <img src="${choosen_product.image}" alt="" width="32%" class="img-fluid" >
-           <img src="${choosen_product.image}" alt="" width="32%" class="img-fluid" >
-           <img src="${choosen_product.image}" alt="" width="32%" class="img-fluid" >
+           <img src="${choosen_product.image}" alt="" width="32%" class="img-fluid border" >
+           <img src="${choosen_product.image}" alt="" width="32%" class="img-fluid border" >
+           <img src="${choosen_product.image}" alt="" width="32%" class="img-fluid border" >
         </div>
         </div>
         <div class="col-md-6 mt-4 mt-md-5 ">
@@ -88,14 +97,14 @@ function addProductToDom(choosen_product){
              <span class="glyphicon glyphicon-minus" aria-hidden="true">-</span>
             </span>
            </div>
-            <a href="cart.html" class="btn fw-light text-light btn-lg fs-6 px-lg-5 mx-1 mt-4 w-100" style="background-color: brown;">
-                <img class="px-1" width="32px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAACAklEQVRYheXWz4tNcRzG8efLFDPIThbEwgZZsVBsJD+awdKPrR1hTRa2dhZWyn+ADTMiiUaRhUlNk81Y+FF+FsmYZqSXhTu67tzDTPfeUTx1Ft/vec553n3O53POSf574R6e1o4bWDaX+QVrkiytrU8lGS2lnJxLiJ/CTozMZWZpAFiQ5H2S3UledTh7rJTypusXmlImcCvJ7SRfOgzQjYvTdnEYNzscHqzFp2YnlmEcSzoMcAiD8xpPlFLeJhlOsqOTAEn6kgxMA6hpoGboiDA/ya5aTlPDRrxBFWCrAFvwLEmqAoaSfE2yqRMA+VHd/kqAUook15Ps6RDAnlSVf0rYh6F2J2MlxtDzJ2N3zbiizQBHcG1qXdlkpZTxJHfT/mnoy5/KPyUcxdV2JddVddVML5jZ85o5QB8e1+/9ds5LKS+SjCbZ1g6ANCn/TF40/WlfH/Q2AnRVGBsBLuN8kokWwjckWZTk4awASikPamMzmGR+CwCfk5wopXxr4R5/UZiH03iO1ziHhRXe5biEj3iC/e0AOIFhbMI63MG5Cu8gLmA1evEOW1sFeIC+uvV6vG7iW4FP6KrbO1Nr4mmazfd+IsniuvXiNJ+Kyfxo7gUN3slZZE0XDuIlDmAvRnCqwnsF17Edx/EB61sCqIO4i/s4VvXHhB6cxSP0Y3PL4f+svgNleol9d6NmIgAAAABJRU5ErkJggg==">                           
+            <button onclick="addToCart(${choosen_product.id},this)" class="btn fw-light btn-lg fs-6 px-lg-5 mt-4 w-100 text-light" style="background-color: brown;">
+                <img class="px-1" width="33px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAACAklEQVRYheXWz4tNcRzG8efLFDPIThbEwgZZsVBsJD+awdKPrR1hTRa2dhZWyn+ADTMiiUaRhUlNk81Y+FF+FsmYZqSXhTu67tzDTPfeUTx1Ft/vec553n3O53POSf574R6e1o4bWDaX+QVrkiytrU8lGS2lnJxLiJ/CTozMZWZpAFiQ5H2S3UledTh7rJTypusXmlImcCvJ7SRfOgzQjYvTdnEYNzscHqzFp2YnlmEcSzoMcAiD8xpPlFLeJhlOsqOTAEn6kgxMA6hpoGboiDA/ya5aTlPDRrxBFWCrAFvwLEmqAoaSfE2yqRMA+VHd/kqAUook15Ps6RDAnlSVf0rYh6F2J2MlxtDzJ2N3zbiizQBHcG1qXdlkpZTxJHfT/mnoy5/KPyUcxdV2JddVddVML5jZ85o5QB8e1+/9ds5LKS+SjCbZ1g6ANCn/TF40/WlfH/Q2AnRVGBsBLuN8kokWwjckWZTk4awASikPamMzmGR+CwCfk5wopXxr4R5/UZiH03iO1ziHhRXe5biEj3iC/e0AOIFhbMI63MG5Cu8gLmA1evEOW1sFeIC+uvV6vG7iW4FP6KrbO1Nr4mmazfd+IsniuvXiNJ+Kyfxo7gUN3slZZE0XDuIlDmAvRnCqwnsF17Edx/EB61sCqIO4i/s4VvXHhB6cxSP0Y3PL4f+svgNleol9d6NmIgAAAABJRU5ErkJggg==">                           
                 Add to cart     
-            </a> <br>
-          <a href="#" class="btn fw-light btn-lg fs-6 px-lg-5 mt-4 w-100" >
+            </button>
+            <button onclick="addToFavoris(${choosen_product.id},this)" class="btn fw-light btn-lg fs-6 px-lg-5 mt-3 w-100" >
               <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-heart-gambling-dreamstale-lineal-dreamstale-2.png" width="31" class="px-1"/> 
-              Ajouter au favouris 
-          </a>
+              Ajouter au favoris 
+            </button>
           <div class="col text-end mx-3">
             <span class="monospaced ">In Stock</span>
           </div>
@@ -103,7 +112,59 @@ function addProductToDom(choosen_product){
     `);
 }
 
+const fav = []
+function addToFavoris(id,ele){
+    fav.push(id)
+    localStorage.setItem('userfavoris',JSON.stringify(fav));
+    let items = JSON.parse(localStorage.getItem('userfavoris'));
+    $('#favoris').html(items.length)
+    $(ele).attr('disabled','disabled')
+    console.log(fav)
+}
+function getFavItems(){
+    let fav_products =[]
+    let items = JSON.parse(localStorage.getItem('userfavoris'));
+    console.log(items)
 
+    if(items != null){
+        for(let i=0;i<items.length;i++){
+            fav_products.push(products.find((product)=>product.id == items[i]));
+        }
+        console.log(fav_products)
+        addFavsToDom(fav_products)
+        $('#favoris').html(fav_products.length)
+        $('#favoris_nbr').html(fav_products.length)
+    }
+    else{
+        $('#favoris').html(fav_products.length)
+        $('#favoris_nbr').html(fav_products.length)
+        $('#favoris_container').append(`
+        <h3 class="mt-5 mb-3"> Enregistrez tous les modèles que vous aimez ici</h3>
+        <a href="./homepage2.html" class="text-reset text-decoration-underline">COMMENCER VOTRE LISTE DE SOUHAITS</a>
+        <div class="row mx-auto" id="cart_data"  style="max-width: 950px;"></div>
+        `)
+    }
+}
+function addFavsToDom(items){
+    console.log(items)
+    for(let i=0; i<items.length; i++){
+        $('#favoris_data').append(`
+        <div class=' col-xs-6 col-md-3 product ' data-categorie='${items[i].categorie}'   >
+            <div class='product-inner text-center'>
+                <a href="../fiche-produit.html">
+                <img class='card-img-top' src='${items[i].image}'  style='cursor: pointer;' onclick="addToLocal(${items[i].id})">
+                </a>
+                <div class='mt-2'>
+                    ${items[i].name} <br>
+                    ${items[i].price} DH<br>
+                    ${items[i].rate}
+                    <button onclick="addToCart(${items[i].id},this)" class='btn btn-style fw-bold mon mb-3'>Ajouter au panier</button>
+                </div>
+            </div>
+        </div>       
+        `);
+    }
+}
 
 
 let arr = []
@@ -114,7 +175,6 @@ function addToCart(id,ele){
     $('#cart').html(items.length)
     $(ele).attr('disabled','disabled')
 }
-
 
 function getCartItems(){
     let choosen_products =[]
@@ -248,8 +308,11 @@ $(".filter").on("change",function() {
 
 const prices = []
 function sortprices(){
-    for(let i=0; i<products.length; i++){
-        prices.push(products[i].price)
+
+    for(let i=0; i<products.length; i++){ 
+        if(prices.length!=products.length){
+            prices.push(products[i].price)
+        }
     }
     prices.sort(function(a, b){return a - b});
     return prices
@@ -257,7 +320,9 @@ function sortprices(){
 const prices2 = []
 function sortpricesAsc(){
     for(let i=0; i<products.length; i++){
-        prices2.push(products[i].price)
+        if(prices2.length!=products.length){
+            prices2.push(products[i].price)
+        }
     }
     prices2.sort(function(a, b){return b - a});
     return prices2
@@ -318,6 +383,10 @@ $('.filter-price').on("change", function(){
                 }
             }
         }
+    }
+    else{
+        $('#alldata').html('')
+        loadData()
     }
 })
 
