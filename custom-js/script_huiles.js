@@ -213,8 +213,8 @@ function deleteProduct(id){
     // display the products left
     $('#cart_data').html('<p><p>')
     addCartItemsToDom(choosen_products)
-
 }
+
 
 var filtersObject = {};
 //on filter change
@@ -235,15 +235,91 @@ $(".filter").on("change",function() {
             filters += "[data-"+key+"='"+filtersObject[key]+"']";
          }
     }
-    
     if (filters == "") {
         $(".product").show();
+
     }else{
         $(".product").hide();
         $(".product").hide().filter(filters).show();
-        
     }
+    
 });
+
+
+const prices = []
+function sortprices(){
+    for(let i=0; i<products.length; i++){
+        prices.push(products[i].price)
+    }
+    prices.sort(function(a, b){return a - b});
+    return prices
+}
+const prices2 = []
+function sortpricesAsc(){
+    for(let i=0; i<products.length; i++){
+        prices2.push(products[i].price)
+    }
+    prices2.sort(function(a, b){return b - a});
+    return prices2
+}
+
+
+$('.filter-price').on("change", function(){
+
+    if($('.filter-price').val() == "des"){
+        $('#alldata').html('')
+        const arrayprices = sortprices()
+
+        for(let j=0; j<products.length; j++){
+            for(let i=0; i<products.length; i++){
+                if(products[i].price == arrayprices[j]){
+                   $('#alldata').append(`
+                   <div class=' col-xs-6 col-md-3  product' data-categorie='${products[i].categorie}'   >
+                   <div class='product-inner text-center'>
+                       <a href="../fiche-produit.html">
+                       <img class='card-img-top' src='${products[i].image}'  style='cursor: pointer;' onclick="addToLocal(${products[i].id})">
+                       </a>
+                       <div class='mt-2'>
+                           ${products[i].name} <br>
+                           ${products[i].price} DH<br>
+                           ${products[i].rate}
+                           <button onclick="addToCart(${products[i].id},this)" class='btn btn-style fw-bold mon mb-3'>Ajouter au panier</button>
+                       </div>
+                   </div>
+                   </div>           
+                   `);
+                }
+            }
+        }
+    }
+
+    if($('.filter-price').val() == "asc"){
+        $('#alldata').html('')
+        const arraypricesAsc = sortpricesAsc()
+
+        for(let x=0; x<products.length; x++){
+            for(let y=0; y<products.length; y++){
+                if(products[y].price == arraypricesAsc[x]){
+                   $('#alldata').append(`
+                   <div class=' col-xs-6 col-md-3  product' data-categorie='${products[y].categorie}'   >
+                   <div class='product-inner text-center'>
+                       <a href="../fiche-produit.html">
+                       <img class='card-img-top' src='${products[y].image}'  style='cursor: pointer;' onclick="addToLocal(${products[y].id})">
+                       </a>
+                       <div class='mt-2'>
+                           ${products[y].name} <br>
+                           ${products[y].price} DH<br>
+                           ${products[y].rate}
+                           <button onclick="addToCart(${products[y].id},this)" class='btn btn-style fw-bold mon mb-3'>Ajouter au panier</button>
+                       </div>
+                   </div>
+                   </div>           
+                   `);
+                }
+            }
+        }
+    }
+})
 
 function incrementValue()
 {

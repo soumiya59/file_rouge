@@ -10,8 +10,9 @@
     if($email=='somaya@gmail.com' && $password =='password'){
        echo '<h1>Welcome Admin ! ' . '</h1>';
        echo '<a href="users.php">Users</a><br/>' ;
-       echo '<a href="CRUD.php">Controle Users</a><br/>' ;
+       echo '<a href="database_controle.php">Controle Users</a><br/>' ;
        echo '<a href="logout.php">logout</a>' ;
+       
     }else{
 
          $sql = "SELECT * FROM users WHERE user_email='$email' AND user_password='$password'";
