@@ -2,26 +2,21 @@
 
 <?php
    session_start();
-   $email = filter_input(INPUT_POST,'user_email',
+   $email = filter_input(INPUT_POST,'email',
    FILTER_SANITIZE_EMAIL);
-   $password= $_POST['user_password'];
+   $password= $_POST['pswd'];
    $_SESSION['email'] = $email;
 
     if($email=='somaya@gmail.com' && $password =='password'){
-       echo '<h1>Welcome Admin ! ' . '</h1>';
-       echo '<a href="users.php">Users</a><br/>' ;
-       echo '<a href="database_controle.php">Controle Users</a><br/>' ;
-       echo '<a href="logout.php">logout</a>' ;
-       
+       header('Location: ../../admin.php');
     }else{
-
-         $sql = "SELECT * FROM users WHERE user_email='$email' AND user_password='$password'";
+         $sql = "SELECT * FROM users WHERE email='$email' AND pswd='$password'";
          $result = mysqli_query($conn,$sql);
          $users = mysqli_fetch_all($result,MYSQLI_ASSOC);
          if(!empty($users)){
                foreach($users as $user){
-                  if($user['user_email'] == $_SESSION['email']){
-                     echo "<h1>Welcome ".$user['user_first_name'].' '.$user['user_last_name']. "</h1>";
+                  if($user['email'] == $_SESSION['email']){
+                     echo "<h1>Welcome ".$user['firstName'].' '.$user['lastName']. "</h1>";
                   }else{
                      echo '<h1>User does not exist</h1>';
                      // or wrong password

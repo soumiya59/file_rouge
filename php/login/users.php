@@ -13,9 +13,9 @@ $users = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
 <?php foreach($users as $user) :?>
     <div style="padding:3px 10px;border:1px solid black">
-    <p><?php echo $user['id'] .' - '. $user['user_first_name'] .' '. $user['user_last_name'];?></p>
-    <p><?php echo $user['user_email'];?></p>
-    <p><?php echo $user['user_password'];?></p>
+    <p><?php echo $user['id'] .' - '. $user['firstName'] .' '. $user['lastName'];?></p>
+    <p><?php echo $user['email'];?></p>
+    <p><?php echo $user['pswd'];?></p>
     </div>
 <?php endforeach;?>
 

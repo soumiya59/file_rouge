@@ -1,9 +1,9 @@
-let products;
+let coffrets;
 function loadData(){
     $.ajax({
         url: 'include/Coffrets.json',
         success: function(data){
-            products = data;
+            coffrets = data;
             const prix = []
             for(let i=0; i<data.length; i++){
                 prix.push(data[i].price)
@@ -41,18 +41,18 @@ function loadData(){
 }
 loadData();
 
-let prod = []
+let coff = []
 function addToLocal(id){
-    prod.push(id)
-    localStorage.setItem('productInfo',JSON.stringify(prod));
+    coff.push(id)
+    localStorage.setItem('productInfo',JSON.stringify(coff));
     let item = JSON.parse(localStorage.getItem('productInfo'));
     // console.log(item)
 }
 
 function getProductInfo(){
     let item = JSON.parse(localStorage.getItem('productInfo'));
-    for(let i=0;i<products.length;i++){
-        let choosen_product = products.find((product)=>product.id == item[i]);
+    for(let i=0;i<coffrets.length;i++){
+        let choosen_product = coffrets.find((product)=>product.id == item[i]);
         // console.log(choosen_product)
         addProductToDom(choosen_product)
     }    
@@ -105,35 +105,93 @@ function addProductToDom(choosen_product){
                 <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-heart-gambling-dreamstale-lineal-dreamstale-2.png" width="31" class="px-1"/> 
                 Ajouter au favoris 
            </button>
-          <div class="col text-end mx-3">
-            <span class="monospaced ">In Stock</span>
+          <div class="col text-end fs-5">
+             <span class="monospaced ">${choosen_product.status}</span>
           </div>
    </div> 
     `);
 }
 
 
-let arr = []
+const favCoffrets = []
+function addToFavoris(id,ele){
+    favCoffrets.push(id)
+    localStorage.setItem('userfavoris',JSON.stringify(favCoffrets));
+    let items = JSON.parse(localStorage.getItem('userfavoris'));
+    $('#favoris').html(items.length)
+    $(ele).attr('disabled','disabled')
+    console.log(favCoffrets)
+}
+function getFavItems(){
+    let fav_coffrets =[]
+    let items = JSON.parse(localStorage.getItem('userfavoris'));
+    console.log(items)
+
+    if(items != null){
+        for(let i=0;i<items.length;i++){
+            fav_coffrets.push(coffrets.find((product)=>product.id == items[i]));
+        }
+        console.log(fav_coffrets)
+        addFavsToDom(fav_coffrets)
+        $('#favoris').html(fav_coffrets.length)
+        $('#favoris_nbr').html(fav_coffrets.length)
+    }
+    else{
+        $('#favoris').html(fav_coffrets.length)
+        $('#favoris_nbr').html(fav_coffrets.length)
+        $('#favoris_container').append(`
+        <h3 class="mt-5 mb-3"> Enregistrez tous les modèles que vous aimez ici</h3>
+        <a href="./homepage2.html" class="text-reset text-decoration-underline">COMMENCER VOTRE LISTE DE SOUHAITS</a>
+        <div class="row mx-auto" id="cart_data"  style="max-width: 950px;"></div>
+        `)
+    }
+}
+function addFavsToDom(items){
+    console.log(items)
+    for(let i=0; i<items.length; i++){
+        $('#favoris_data').append(`
+        <div class=' col-xs-6 col-md-3 product ' data-categorie='${items[i].categorie}'   >
+            <div class='product-inner text-center'>
+                <a href="../fiche-produit.html">
+                <img class='card-img-top' src='${items[i].image}'  style='cursor: pointer;' onclick="addToLocal(${items[i].id})">
+                </a>
+                <div class='mt-2'>
+                    ${items[i].name} <br>
+                    ${items[i].price} DH<br>
+                    ${items[i].rate}
+                    <button onclick="addToCart(${items[i].id},this)" class='btn btn-style fw-bold mon mb-3'>Ajouter au panier</button>
+                </div>
+            </div>
+        </div>       
+        `);
+    }
+}
+
+
+let arry = []
 function addToCart(id,ele){
-    arr.push(id)
-    localStorage.setItem('userCart',JSON.stringify(arr));
+    arry.push(id)
+    localStorage.setItem('userCart',JSON.stringify(arry));
     let items = JSON.parse(localStorage.getItem('userCart'));
     $('#cart').html(items.length)
     $(ele).attr('disabled','disabled')
 }
 function getCartItems(){
-    let choosen_products =[]
+    let choosen_coffrets =[]
     let items = JSON.parse(localStorage.getItem('userCart'));
+    $('#cart').html(items.length)
+    // console.log(items)
+    // console.log(choosen_coffrets)
     if(items != null){
         for(let i=0;i<items.length;i++){
-            choosen_products.push(products.find((product)=>product.id == items[i]));
+            choosen_coffrets.push(coffrets.find((product)=>product.id == items[i]));
         }
-        // console.log(choosen_products)
-        addCartItemsToDom(choosen_products)
-        $('#cart').html(choosen_products.length)
+        // console.log(choosen_coffrets)
+        addCartItemsToDom(choosen_coffrets)
+        $('#cart').html(choosen_coffrets.length)
     }
     else{
-        $('#cart').html(choosen_products.length)
+        $('#cart').html(choosen_coffrets.length)
         $('.table-bordered').hide()
         $('.caisse_btn').hide()
         $('#cart_container').append(`
@@ -180,8 +238,8 @@ function addCartItemsToDom(items){
             </div>
 
             <div class="col text-center">
-              <button onclick="deleteProduct()" class="border-0 bg-light">
-                <img class="" src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-delete-ui-dreamstale-lineal-dreamstale-2.png" height="20px" width="20px"/>
+            <button onclick="deleteCoffret(${items[i].id})" class="border-0 bg-light" id="deleteProduct">
+              <img class="" src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-delete-ui-dreamstale-lineal-dreamstale-2.png" height="20px" width="20px"/>
               </button>
             </div>
         </div>
@@ -194,9 +252,32 @@ function addCartItemsToDom(items){
 }
 
 
-function deleteproduct(){
-
+function deleteCoffret(id){
+    // get the choosen products
+    let choosen_products =[]
+    let items = JSON.parse(localStorage.getItem('userCart'));
+    for(let i=0;i<items.length;i++){
+        choosen_products.push(coffrets.find((product)=>product.id == items[i]));
+    }
+    // delete product from the list
+    for(let i=0;i<choosen_products.length;i++){
+       if(choosen_products[i].id == id ){
+        console.log('deleted' +i);
+        choosen_products.splice(i,1)
+        break;
+       }
+    }
+    // delete product from localstorage
+    let arry = []
+    for(let i=0;i<choosen_products.length;i++){
+        arry.push(choosen_products[i].id)
+    }
+    localStorage.setItem('userCart',JSON.stringify(arry));
+    // display the products left
+    $('#cart_data').html('<p><p>')
+    addCartItemsToDom(choosen_products)
 }
+
 
 var filtersObject = {};
 //on filter change
@@ -227,28 +308,27 @@ $(".filter").on("change",function() {
     }
 });
 
-const prices = []
+const pricesArray = []
 function sortprices(){
 
-    for(let i=0; i<products.length; i++){ 
-        if(prices.length!=products.length){
-            prices.push(products[i].price)
+    for(let i=0; i<coffrets.length; i++){ 
+        if(pricesArray.length!=coffrets.length){
+            pricesArray.push(coffrets[i].price)
         }
     }
-    prices.sort(function(a, b){return a - b});
-    return prices
+    pricesArray.sort(function(a, b){return a - b});
+    return pricesArray
 }
-const prices2 = []
+const ppricesArray2 = []
 function sortpricesAsc(){
-    for(let i=0; i<products.length; i++){
-        if(prices2.length!=products.length){
-            prices2.push(products[i].price)
+    for(let i=0; i<coffrets.length; i++){
+        if(pricesArray2.length!=coffrets.length){
+            pricesArray2.push(coffrets[i].price)
         }
     }
-    prices2.sort(function(a, b){return b - a});
-    return prices2
+    pricesArray2.sort(function(a, b){return b - a});
+    return pricesArray2
 }
-
 
 $('.filter-price').on("change", function(){
 
@@ -256,20 +336,20 @@ $('.filter-price').on("change", function(){
         $('#alldata').html('')
         const arrayprices = sortprices()
 
-        for(let j=0; j<products.length; j++){
-            for(let i=0; i<products.length; i++){
-                if(products[i].price == arrayprices[j]){
+        for(let j=0; j<coffrets.length; j++){
+            for(let i=0; i<coffrets.length; i++){
+                if(coffrets[i].price == arrayprices[j]){
                    $('#alldata').append(`
-                   <div class=' col-xs-6 col-md-3  product' data-categorie='${products[i].categorie}'   >
+                   <div class=' col-xs-6 col-md-3  product' data-categorie='${coffrets[i].categorie}'   >
                    <div class='product-inner text-center'>
                        <a href="../fiche-produit.html">
-                       <img class='card-img-top' src='${products[i].image}'  style='cursor: pointer;' onclick="addToLocal(${products[i].id})">
+                       <img class='card-img-top' src='${coffrets[i].image}'  style='cursor: pointer;' onclick="addToLocal(${coffrets[i].id})">
                        </a>
                        <div class='mt-2'>
-                           ${products[i].name} <br>
-                           ${products[i].price} DH<br>
-                           ${products[i].rate}
-                           <button onclick="addToCart(${products[i].id},this)" class='btn btn-style fw-bold mon mb-3'>Ajouter au panier</button>
+                           ${coffrets[i].name} <br>
+                           ${coffrets[i].price} DH<br>
+                           ${coffrets[i].rate}
+                           <button onclick="addToCart(${coffrets[i].id},this)" class='btn btn-style fw-bold mon mb-3'>Ajouter au panier</button>
                        </div>
                    </div>
                    </div>           
@@ -283,20 +363,20 @@ $('.filter-price').on("change", function(){
         $('#alldata').html('')
         const arraypricesAsc = sortpricesAsc()
 
-        for(let x=0; x<products.length; x++){
-            for(let y=0; y<products.length; y++){
-                if(products[y].price == arraypricesAsc[x]){
+        for(let x=0; x<coffrets.length; x++){
+            for(let y=0; y<coffrets.length; y++){
+                if(coffrets[y].price == arraypricesAsc[x]){
                    $('#alldata').append(`
-                   <div class=' col-xs-6 col-md-3  product' data-categorie='${products[y].categorie}'   >
+                   <div class=' col-xs-6 col-md-3  product' data-categorie='${coffrets[y].categorie}'   >
                    <div class='product-inner text-center'>
                        <a href="../fiche-produit.html">
-                       <img class='card-img-top' src='${products[y].image}'  style='cursor: pointer;' onclick="addToLocal(${products[y].id})">
+                       <img class='card-img-top' src='${coffrets[y].image}'  style='cursor: pointer;' onclick="addToLocal(${coffrets[y].id})">
                        </a>
                        <div class='mt-2'>
-                           ${products[y].name} <br>
-                           ${products[y].price} DH<br>
-                           ${products[y].rate}
-                           <button onclick="addToCart(${products[y].id},this)" class='btn btn-style fw-bold mon mb-3'>Ajouter au panier</button>
+                           ${coffrets[y].name} <br>
+                           ${coffrets[y].price} DH<br>
+                           ${coffrets[y].rate}
+                           <button onclick="addToCart(${coffrets[y].id},this)" class='btn btn-style fw-bold mon mb-3'>Ajouter au panier</button>
                        </div>
                    </div>
                    </div>           
@@ -310,6 +390,7 @@ $('.filter-price').on("change", function(){
         loadData()
     }
 })
+
 
 function incrementValue()
 {

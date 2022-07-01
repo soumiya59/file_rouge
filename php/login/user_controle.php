@@ -4,10 +4,10 @@ class CRUD{
         define('DB_HOST','localhost');
         define('DB_USER','newuser');
         define('DB_PASSWORD','password');
-        define('DB_NAME','Login');
+        define('DB_NAME','BBE');
         $conn = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
         if($conn->connect_error){
-            die('connection failed' . $conn->connect_error);
+            die('connection failed : ' . $conn->connect_error);
         }else{
             return $conn;
         }
@@ -19,7 +19,7 @@ class CRUD{
             $lastName=$_POST['lastName'];
             $email=$_POST['email'];
             $password=$_POST['pswd'];
-            $sql = "INSERT INTO ".$table." (user_first_name,user_last_name,user_email,user_password) VALUES ('$firstName', '$lastName', '$email', '$password')";
+            $sql = "INSERT INTO ".$table." (firstName,lastName,email,pswd) VALUES ('$firstName', '$lastName', '$email', '$password')";
             if (mysqli_query($retConn, $sql)) {
               echo "User Ajouté";
             } else {
@@ -46,8 +46,8 @@ class CRUD{
             $sql= "SELECT * FROM ".$table." WHERE id=".$user_id ;
             $result = $retConn->query($sql);
             while ($user = $result->fetch_assoc()){
-                echo '<p>'. $user['id'].' - '. $user['user_first_name'].' '.$user['user_last_name'] .'</p>';
-                echo '<p>Email: '.$user['user_email'].' || Password: '.$user['user_password'] .'</p><hr>';
+                echo '<p>'. $user['id'].' - '. $user['firstName'].' '.$user['lastName'] .'</p>';
+                echo '<p>Email: '.$user['email'].' || Password: '.$user['pswd'] .'</p><hr>';
             }
             $result->close();
         }
@@ -60,7 +60,7 @@ class CRUD{
             $newLastName=$_POST['newLastName'];
             $newEmail=$_POST['newEmail'];
             $newPswd=$_POST['newPswd'];
-            $sql = "UPDATE ".$table." SET user_first_name='" .$newFirstName. "', user_last_name='" .$newLastName. "' ,user_email='" .$newEmail. "' ,user_password= '".$newPswd. "'  WHERE id='".$id."'";
+            $sql = "UPDATE ".$table." SET firstName='" .$newFirstName. "', lastName='" .$newLastName. "' ,email='" .$newEmail. "' ,pswd= '".$newPswd. "'  WHERE id='".$id."'";
             if($retConn->query($sql)){
                echo "Data updated successfully." ;
             }else{
@@ -86,14 +86,14 @@ if(!empty($_POST['newPswd'])){
 
 ?>
 <html>
-    <body>
-        <div style="display: flex; justify-content:space-between">
+    <body style="margin:0 6% ;">
+        <div style="display: flex; justify-content:space-between;margin-top:1rem;">
            <h2>GESTION DES UTILISATEURS</h2>
            <a href="./users.php" target="_blank" style="padding-top: 2rem;">SHOW ALL USERS</a>
         </div>
-        <form action="" method="POST">
+        <form action="" method="POST" >
             <fieldset>
-                <legend>Add User</legend>
+                <legend style="text-decoration:underline; font-size:1.2rem">Add User</legend>
                 Nom : <input type="text" name="lastName"><br>
                 Prenom : <input type="text" name="FirstName"><br>
                 Email : <input type="email" name="email" ><br>
@@ -101,17 +101,17 @@ if(!empty($_POST['newPswd'])){
                 <input type="button" name="add" value="ADD" onclick="this.form.submit()"><br>
             </fieldset><br>
             <fieldset>
-                <legend>Delete User</legend>
+                <legend style="text-decoration:underline; font-size:1.2rem">Delete User</legend>
                 ID : <input type="text" name="user_id_delete">
                 <button type="submit">delete</button>
             </fieldset><br>
             <fieldset>
-                <legend>Show User</legend>
+                <legend style="text-decoration:underline; font-size:1.2rem">Show User</legend>
                 ID : <input type="text" name="user_id_show">
                 <button type="submit" name="show">Show</button>
             </fieldset><br>
             <fieldset>
-                <legend>Update User</legend>
+                <legend style="text-decoration:underline; font-size:1.2rem">Update User</legend>
                 ID : <input type="text" name="id_update"><br>
                 Nom : <input type="text" name="newLastName"><br>
                 Prenom : <input type="text" name="newFirstName"><br>

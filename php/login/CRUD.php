@@ -26,7 +26,7 @@ class CRUD{
     public static function ajouter_poo($table,$firstName,$lastName,$email,$password){
         $retConn = self::connecter();
         if($retConn != null){
-            $sql = "INSERT INTO ".$table." (user_first_name,user_last_name,user_email,user_password) VALUES ('$firstName', '$lastName', '$email', '$password')";
+            $sql = "INSERT INTO ".$table." (firstName,lastName,email,pswd) VALUES ('$firstName', '$lastName', '$email', '$password')";
             if (mysqli_query($retConn, $sql)) {
               echo "User Ajouté";
             } else {

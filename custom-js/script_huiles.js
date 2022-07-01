@@ -105,9 +105,9 @@ function addProductToDom(choosen_product){
               <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-heart-gambling-dreamstale-lineal-dreamstale-2.png" width="31" class="px-1"/> 
               Ajouter au favoris 
             </button>
-          <div class="col text-end mx-3">
-            <span class="monospaced ">In Stock</span>
-          </div>
+            <div class="col text-end fs-5">
+                <span class="monospaced ">${choosen_product.status}</span>
+            </div>
    </div> 
     `);
 }

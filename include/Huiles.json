@@ -5,7 +5,8 @@
         "name": "Huile essentielle d'amande",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(11)</p></div>",
         "price": 56,
-        "image": "./img/oud.png"
+        "image": "./img/oud.png",
+        "status":"In stock"
     },
     {
         "categorie": "Cosmétique",
@@ -13,21 +14,26 @@
         "name": "Huile essentielle d'Argane",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(31)</p></div>",
         "price": 60,
-        "image": "./img/cypres.png"
-    },    {
+        "image": "./img/cypres.png",
+        "status":"In stock"
+    },    
+    {
         "categorie": "Cosmétique",
         "id":3,
         "name": "Huile essentielle de Rose",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(12)</p></div>",
         "price":8,
-        "image": "./img/alcoolat-rose.png"
-    },    {
+        "image": "./img/alcoolat-rose.png",
+        "status":"In stock"
+    },    
+    {
         "categorie": "Cosmétique",
         "id":4,
         "name": "Huile essentielle de Jojoba",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(18)</p></div>",
         "price": 14,
-        "image": "./img/jasmin.png"
+        "image": "./img/jasmin.png",
+        "status":"In stock"
     },
 
     
@@ -37,7 +43,8 @@
         "name": "Huile essentielle de Jasmin",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 39,
-        "image": "./img/jasmin.png"
+        "image": "./img/jasmin.png",
+        "status":"In stock"
     },
     {
         "categorie": "Vegetable",
@@ -45,21 +52,26 @@
         "name": "Huile essentielle de tubereuse",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(31)</p></div>",
         "price": 66,
-        "image": "./img/tubereuse.png"
-    },    {
+        "image": "./img/tubereuse.png",
+        "status":"In stock"
+    },    
+    {
         "categorie": "Vegetable",
         "id":7,
         "name": "Huile essentielle de cannelle",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(12)</p></div>",
         "price": 77,
-        "image": "./img/bott.png"
-    },    {
+        "image": "./img/bott.png",
+        "status":"In stock"
+    },    
+    {
         "categorie": "Vegetable",
         "id":8,
         "name": "Huile essentielle d'ambre",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(18)</p></div>",
         "price": 12,
-        "image": "./img/ambre-gris.png"
+        "image": "./img/ambre-gris.png",
+        "status":"In stock"
     },
 
 
@@ -69,7 +81,8 @@
         "name": "Huile essentielle de Citron",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 50,
-        "image": "./img/ambre-gris.png"
+        "image": "./img/ambre-gris.png",
+        "status":"In stock"
     },
     {
         "categorie": "Alimentaire",
@@ -77,7 +90,8 @@
         "name": "Huile essentielle de Basilic",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 40,
-        "image": "./img/candle.png"
+        "image": "./img/candle.png",
+        "status":"In stock"
     },
     {
         "categorie": "Alimentaire",
@@ -85,7 +99,8 @@
         "name": "Huile essentielle de Gingembre",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 45,
-        "image": "./img/ambre-gris.png"
+        "image": "./img/ambre-gris.png",
+        "status":"In stock"
     },
     {
         "categorie": "Alimentaire",
@@ -93,7 +108,8 @@
         "name": "Huile essentielle de Lavendin",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 36,
-        "image": "./img/candle.png"
+        "image": "./img/candle.png",
+        "status":"In stock"
     },
 
     {
@@ -102,7 +118,8 @@
         "name": "Huile essentielle de Jasmin",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 34,
-        "image": "./img/jasmin.png"
+        "image": "./img/jasmin.png",
+        "status":"In stock"
     },
     {
         "categorie": "Nos Selection",
@@ -110,20 +127,25 @@
         "name": "Huile essentielle de curcuma",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(31)</p></div>",
         "price": 57,
-        "image": "./img/tubereuse.png"
-    },    {
+        "image": "./img/tubereuse.png",
+        "status":"In stock"
+    },    
+    {
         "categorie": "Nos Selection",
         "id":15,
         "name": "Huile essentielle de cannelle",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(12)</p></div>",
         "price": 51,
-        "image": "./img/bott.png"
-    },    {
+        "image": "./img/bott.png",
+        "status":"In stock"
+    },    
+    {
         "categorie": "Nos Selection",
         "id":16,
         "name": "Huile essentielle d'ambre",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(18)</p></div>",
         "price": 38,
-        "image": "./img/ambre-gris.png"
+        "image": "./img/ambre-gris.png",
+        "status":"In stock"
     }
 ]

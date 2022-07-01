@@ -5,7 +5,8 @@
         "name": "Huile Essentielle pour Diffuseurs",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(11)</p></div>",
         "price": 56,
-        "image": "./img/coffrets18.jpg"
+        "image": "./img/coffrets18.jpg",
+        "status":"In stock"
     },
     {
         "categorie": "Coffret aromatique",
@@ -13,7 +14,8 @@
         "name": "ASAKUKI Kit Huile Essentielle ",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(31)</p></div>",
         "price": 65,
-        "image": "./img/coffrets17.jpg"
+        "image": "./img/coffrets17.jpg",
+        "status":"In stock"
     },    
     {
         "categorie": "Coffret aromatique",
@@ -21,7 +23,8 @@
         "name": "Westars Coffret Huile Essentielle De Noël",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(12)</p></div>",
         "price": 64,
-        "image": "./img/coffrets6.jpg"
+        "image": "./img/coffrets6.jpg",
+        "status":"In stock"
     },    
     {
         "categorie": "Coffret aromatique",
@@ -29,7 +32,8 @@
         "name": "Huiles Essentielles Naturelles",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(18)</p></div>",
         "price": 62,
-        "image": "./img/coffrets7.jpg"
+        "image": "./img/coffrets7.jpg",
+        "status":"In stock"
     },
     
 
@@ -39,7 +43,8 @@
         "name": "Kit d'huiles essentielles fruitées",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 34,
-        "image": "./img/coffrets8.jpg"
+        "image": "./img/coffrets8.jpg",
+        "status":"In stock"
 
     },
     {
@@ -48,7 +53,8 @@
         "name": "ASAKUKI Huile Essentielle Florale",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(31)</p></div>",
         "price": 66,
-        "image": "./img/coffrets9.jpg"
+        "image": "./img/coffrets9.jpg",
+        "status":"In stock"
 
     },    
     {
@@ -57,7 +63,8 @@
         "name": "Huile essentielle de cannelle",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(12)</p></div>",
         "price": 77,
-        "image": "./img/coffrets10.jpg"
+        "image": "./img/coffrets10.jpg",
+        "status":"In stock"
 
     },    
     {
@@ -66,7 +73,8 @@
         "name": "Huile Essentielle Aromathérapie",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(18)</p></div>",
         "price": 86,
-        "image": "./img/coffrets11.jpg"
+        "image": "./img/coffrets11.jpg",
+        "status":"In stock"
 
     },
 
@@ -77,7 +85,8 @@
         "name": "Huile Essentielle pour Diffuseur",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 50,
-        "image": "./img/coffrets12.jpg"
+        "image": "./img/coffrets12.jpg",
+        "status":"In stock"
 
     },
     {
@@ -86,7 +95,8 @@
         "name": "Huile Essentielle pour Diffuseurs",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 40,
-        "image": "./img/coffrets13.jpg"
+        "image": "./img/coffrets13.jpg",
+        "status":"In stock"
 
     },
     {
@@ -95,7 +105,8 @@
         "name": "Huiles  pour Aromathérapie Diffuseurs ",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 45,
-        "image": "./img/coffrets3.jpg"
+        "image": "./img/coffrets3.jpg",
+        "status":"In stock"
 
     },
     {
@@ -104,7 +115,8 @@
         "name": "Huiles Essentielles pour Diffuseurs",
         "rate": "<div class='d-flex justify-content-center mt-2'><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i> <p class='mx-2'>(7)</p></div>",
         "price": 36,
-        "image": "./img/coffrets15.jpg"
+        "image": "./img/coffrets15.jpg",
+        "status":"In stock"
 
     }    
     

@@ -93,10 +93,10 @@ function afficherclient(list){
     return result;
 }
 function novclient(frm_client) {
-    let nom=frm_client.user_last_name.value;
-    let prenom=frm_client.user_first_name.value;
-    let email=frm_client.user_email.value;
-    let password=frm_client.user_password.value;
+    let nom=frm_client.lastName.value;
+    let prenom=frm_client.firstName.value;
+    let email=frm_client.email.value;
+    let password=frm_client.pswd.value;
 
     let result="";
     try {
