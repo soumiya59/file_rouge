@@ -1,10 +1,6 @@
 <?php
 class DAO{
-    public static function test(){
-        return 1+1;
-    }
-    
-    function connecter(){
+    public static function connecter(){
         define('DB_HOST','localhost');
         define('DB_USER','newuser');
         define('DB_PASSWORD','password');
@@ -115,6 +111,25 @@ class DAO{
                 echo "Error:" . $retConn->error;
             }
 
+        }
+    }
+    public static function getproducts(){
+        $retConn = self::connecter();
+        if($retConn != null){
+           $sql = "SELECT * FROM product";
+           $result = $retConn->query($sql); 
+           $products= mysqli_fetch_all($result,MYSQLI_ASSOC);
+           return count($products);
+        }
+    }
+    
+    public static function getnbrclients(){
+        $retConn = self::connecter();
+        if($retConn != null){
+           $sql = "SELECT * FROM users";
+           $result = $retConn->query($sql); 
+           $users= mysqli_fetch_all($result,MYSQLI_ASSOC);
+           return count($users);
         }
     }
 }

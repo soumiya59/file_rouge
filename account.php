@@ -6,7 +6,7 @@
     $lastname = $info[1];
     $email = $info[2];
     $pswd = $info[3];
-    $id = $info[4]
+    $id = $info[4];
 ?>
 
 <html>

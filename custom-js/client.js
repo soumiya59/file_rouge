@@ -1,4 +1,3 @@
-const client_dom = document.getElementById("client");
 const client_list=[]
 class MyError extends Error { }
 
@@ -18,8 +17,7 @@ class Client {
             return P_entree
         }
     }
-    static Valide_email(P_)
-     {
+    static Valide_email(P_){
         if (!/^\S+@\S+\.\S+$/.test(P_)) {
             throw new MyError("L'email est incorrecte!")
         }
@@ -27,8 +25,7 @@ class Client {
             return P_
         }
     }
-    static Valide_password(P_)
-    {
+    static Valide_password(P_){
        if (P_.length < 5) {
         throw new MyError("Votre mot de passe doit comporter au moins 5 caractères")
        }else {
@@ -42,10 +39,6 @@ class Client {
         this.#email = Client.Valide_email(email);
         this.#password = Client.Valide_password(password);
         this.constructor.nbr_Clients += 1
-    }
-    //Méthodes génériques (classe mére)
-    Affichage() {
-        return this.#nom + " | " + this.#prenom + " | " + this.#email+ " | " + this.#password
     }
     // Accesseur à l'attribut de classe
     GetNombreClients() {
@@ -84,35 +77,25 @@ class Client {
 function elementError(msg){
     return '<p>' + msg + '</p>';
 }
-function afficherclient(list){
-    let result=""
-    for (let index = 0; index < list.length; index++) {
-        const obj_client = list[index];
-        result += "<hr><p> " + obj_client.Affichage() + "</p>" ;
-    }
-    return result;
-}
+
 function novclient(frm_client) {
     let nom=frm_client.lastName.value;
     let prenom=frm_client.firstName.value;
     let email=frm_client.email.value;
     let password=frm_client.pswd.value;
-
     let result="";
     try {
         let obj_client=new Client(nom,prenom,email,password);
         client_list.push(obj_client)
         client_list.reverse()
-        // result=afficherclient(client_list)
     } catch (error) {
         result =elementError(error.message)
     }finally{
-        client_dom.innerHTML = result;;
-
+        document.getElementById("client").innerHTML = result;
+        console.log(result)
         let empt = document.getElementById('client').innerHTML;
         if (empt == null || empt == ""){
             document.getElementById("myBtn").setAttribute('type', 'submit');
         }
-
     }
 }

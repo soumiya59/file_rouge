@@ -10,6 +10,13 @@
                $("#footer").load("./include/Footer.html");
         });
         </script> 
+        <style>
+            tr td{
+                border:1px solid grey;
+                padding: .8rem;
+                font-size: large;
+            }
+        </style>
    </head>
    
     <body>
@@ -34,10 +41,21 @@
                         </script>';
                     }
                     if(isset($_POST['products'])){
-                        echo '<p></p>' ;
                         echo '<script>document.querySelector("#products").style.color= "#9e121b";
                         document.querySelector("#products").style.fontWeight= "bold"
                         </script>';
+                        include "php/login/DAO.php";
+                        echo "<table><tr>
+                              <td>Nombre produit Total</td>
+                              <td> ".DAO::getproducts()."</td></tr>
+                              <tr>
+                              <td>Nombre de comptes clients </td>
+                              <td>".DAO::getnbrclients()."</td></tr>
+                              <tr>
+                              <td>Nombre de bouteilles vendues</td> 
+                              <td>0</td>
+                              </tr>
+                              </table>";  
                     }
                     if(isset($_POST['logout'])){
                         header('location: ./php/login/logout.php');
