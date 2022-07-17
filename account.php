@@ -8,7 +8,6 @@
     $pswd = $info[3];
     $id = $info[4];
 ?>
-
 <html>
    <head>
         <title>Account</title>
@@ -20,7 +19,6 @@
                $("#header").load("./include/Header.html");
                $("#footer").load("./include/Footer.html");
         });
-
         </script>
         <style>
             table{
@@ -38,7 +36,7 @@
         <div id="header"></div>
 
         <div class="container my-4 ban " style="min-height:700px ;">
-        <h2 class="fw-bold">Welcome <?php echo $firstname ?> </h2>
+        <h2 class="fw-bold">Bonjour <?php echo $firstname ?> </h2>
         <form action="" method="POST" class="row mt-4">
         <div class="col-4 py-4 text-center">
             <button class="border-0 bg-light py-2 mb-2 fs-5" id="profile" name="Profile">Profile</button><br>
@@ -67,7 +65,7 @@
                             </tr>
                             <tr>
                             <td></td>
-                            <td class="py-3 ps-3"><a href="./php/login/update.php?id='.$id.'" class="red float-end pe-4">Edit</a>  </td>
+                            <td class="py-3 ps-3"><a href="./php/login/update.php?id='.$id.'" class="red float-end pe-4">Modifier</a>  </td>
                             </tr>
                             </table>' ;
                         echo '<script>document.querySelector("#profile").style.color= "#9e121b";

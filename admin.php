@@ -23,19 +23,19 @@
         
         <div id="header"></div>
 
-        <div class="container my-4 ban " style="min-height:700px ;">
+        <div class="container my-4 ban ">
         <h2 class="fw-bold">Welcome Admin!</h2>
         <form action="" method="POST" class="row mt-4">
-        <div class="col-4 py-4 text-center">
+        <div class="col-3 py-4 text-center">
             <button class="border-0 bg-light mb-3 fs-5" id="users" name="users">Gestion des Utilisateurs</button><br>
             <button class="border-0 bg-light mb-3 fs-5" id="products" name="products">Gestion des produits</button><br>
             <button class="border-0 bg-light mb-3 fs-5 " name="logout">logout</button>
         </div>
-        <div class="col-8 ps-4 pt-4" style="border-left: 1px solid grey;">
+        <div class="col-9 ps-4 pt-4" style="border-left: 1px solid grey;">
                 <?php
                     if(isset($_POST['users'])){
-                        echo '<div class="text-dark fs-5 mb-3"><a class="text-dark" href="./php/login/view.php">> Update/Delete Users</a></div>' ;
-                        echo '<div class="text-dark fs-5 "><a class="text-dark" href="./php/login/create.php">> Add Users</a></div>' ;
+                        echo '<div class="text-dark fs-5 mb-3"><a class="text-dark" href="./php/login/view.php">> Modifier/Supprimer les Utilisateurs</a></div>' ;
+                        echo '<div class="text-dark fs-5 "><a class="text-dark" href="./php/login/create.php">> Ajouter de Utilisateurs</a></div>' ;
                         echo '<script>document.querySelector("#users").style.color= "#9e121b";
                         document.querySelector("#users").style.fontWeight= "bold"
                         </script>';
@@ -45,8 +45,13 @@
                         document.querySelector("#products").style.fontWeight= "bold"
                         </script>';
                         include "php/login/DAO.php";
-                        echo "<table><tr>
-                              <td>Nombre produit Total</td>
+                        echo "<div class='d-flex'>
+                              <div class='justify-content-start'>
+                              <p class='text-dark fs-5'><a class='text-dark' href='./php/produit/view.php'>> Modifier/Supprimer les Produits</a></p>
+                              <p class='text-dark fs-5'><a class='text-dark' href='./php/produit/create.php'>> Ajouter des Produits</a></p>
+                              </div>
+                              <div class='justify-content-end mx-auto'><table><tr>
+                              <td>Nombre produits Total</td>
                               <td> ".DAO::getproducts()."</td></tr>
                               <tr>
                               <td>Nombre de comptes clients </td>
@@ -55,7 +60,8 @@
                               <td>Nombre de bouteilles vendues</td> 
                               <td>0</td>
                               </tr>
-                              </table>";  
+                              </table></div>
+                              </div>";  
                     }
                     if(isset($_POST['logout'])){
                         header('location: ./php/login/logout.php');
@@ -64,9 +70,6 @@
         </div>
         </form>
         </div>
-
-        <div id="footer"></div>
-
 
     </body>
 

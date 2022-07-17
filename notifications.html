@@ -1,0 +1,48 @@
+<html>
+   <head>
+        <title>Mes Notifications</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <link rel="icon" href="img/icon.jpg" type="image/x-icon" />
+        <script> 
+        $(function(){
+               $("#header").load("./include/Header.html"); 
+               $("#footer").load("./include/Footer.html");
+        });
+        </script> 
+   </head>
+
+<body>
+ <div id="header"></div>
+
+ <div class="container ban mt-5 mb-6 " style="height: 700px;">
+     <h1 class="text-center mon">Mes Notifications</h1>
+    <hr>
+     <table class="mt-5 mx-auto" >
+        <tr class="fs-5 fw-light">
+            <th class="px-5 th" id="" style="cursor: pointer;">commandes</th>
+            <th class="px-5 th" id="" style="cursor: pointer;">Nouvelles</th>
+            <th class="px-5 th" id="" style="cursor: pointer;">Activité</th>
+            <th class="px-5 th" id="" style="cursor: pointer;">Promos</th>
+        </tr>
+     </table>
+
+     <div style="margin-top:6rem" class="d-none" id="empty">
+        <img class="d-flex mx-auto" height="120px" 
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABmJLR0QA/wD/AP+gvaeTAAABpUlEQVR4nO3cS0rDUABG4aOos0pdjroHK65CF6LVpegOBEc+QFegC7BdgY510EiLWCH5b5MUzgeX0jaPm0NJOrogSeqTbeAMeAE+gQ/gGTgFtjqc11rYA56AryXjERh2Nrue2wDumIV6BUbAoBrHwFv13W21rX45Zh7vr1/ZkHnEoxbntTZumMUZ/bPNSbXNdSszasEOcAVMWX7fqjsGC8d/Ah4W3u8WPM8EGFfX0JlLyl3Qz1j0ANz/+qz0+S7CBpFJNYn9Gvv8FaqEusc9YP5L7EyTGH0JWGQum8nOMmCsi4DT6vWg4DEPq9dO72dNNLmHjMmfnMvGeQvzL6rJBHaYRfx5gpcY78zi1f1Pt5YB+8SncNcMGDJgyIAhA4YMGDJgyIAhA4YMGDJgyIAhA4YMGDJgyIAhA4YMGDJgyIAhA4YMGDJgyIAhA4YMGDJgyIAhA4YMGDJgyIAhA4YMGDJgyIAhA4YMGDJgyIAhA4YMGDJgyIAhA4YMGDJgyIAhA4bSgKtYQKItvVioYpULSLQ16i5UUdQqFpBoazRdqEKSJElS6htYrhl27TXJIgAAAABJRU5ErkJggg==">
+        <p class="text-center">Vide ici :-(</p>
+     </div>
+
+ </div>
+
+ <div id="footer"></div>
+ <script>
+    $('.th').click(function(){
+        $('.th').removeClass("text-decoration-underline");
+        $(this).addClass("text-decoration-underline");
+        $('#empty').removeClass('d-none')
+    })
+
+ </script>
+
+</body>
+</html>
